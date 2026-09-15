@@ -217,16 +217,6 @@
             font-size: 1.4em;
         }
 
-        /* Diagram Styles */
-        .diagram-container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-        }
-
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -271,6 +261,108 @@
             pointer-events: none;
         }
 
+        /* Slayt 8 - Enerji Akışı Stil */
+        .energy-flow-container {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .flow-diagram {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            gap: 30px;
+        }
+
+        .flow-section {
+            flex: 1;
+            text-align: center;
+        }
+
+        .flow-section h3 {
+            font-size: 1.3em;
+            color: #667eea;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        .flow-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .flow-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .flow-box-highlight {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #333;
+        }
+
+        .flow-arrow {
+            font-size: 2.5em;
+            margin: 0 -10px;
+            color: #667eea;
+        }
+
+        .field-diagram {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        .field-title {
+            font-size: 1.3em;
+            color: #333;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .field-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .field-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .field-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .field-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .field-label {
+            font-weight: 600;
+            color: #333;
+        }
+
         @media (max-width: 1920px) {
             .slide {
                 padding: 60px 80px;
@@ -286,14 +378,6 @@
 
             .slide p, .slide li {
                 font-size: 1.05em;
-            }
-
-            .slide-kapak h1 {
-                font-size: 3em;
-            }
-
-            .slide-kapak .subtitle {
-                font-size: 1.5em;
             }
         }
     </style>
@@ -456,93 +540,89 @@
                 </div>
             </div>
 
-            <!-- SLAYT 8 - ENERJI AKIŞI (YENİ GÖRSEL) -->
+            <!-- SLAYT 8 - ENERJI AKIŞI (YENİ SADE VERSİYON) -->
             <div class="slide" id="slide-8">
-                <h2>⚡ ENERJİ AKIŞI - KAYNAKTAN TÜKETİCİYE</h2>
+                <h2>⚡ ENERJİ AKIŞI - NASIL ÇALIŞACAK?</h2>
                 
-                <div class="diagram-container">
-                    <svg width="900" height="350" viewBox="0 0 900 350">
-                        <!-- KAYNAKLAR (Solda) -->
-                        <g id="sources">
-                            <!-- Şebeke -->
-                            <rect x="10" y="20" width="100" height="60" fill="#FF6B6B" stroke="#c92a2a" stroke-width="2" rx="5"/>
-                            <text x="60" y="55" font-size="18" font-weight="bold" text-anchor="middle" fill="white">⚡ Şebeke</text>
-                            
-                            <!-- Jeneratör -->
-                            <rect x="10" y="100" width="100" height="60" fill="#FFA94D" stroke="#e67700" stroke-width="2" rx="5"/>
-                            <text x="60" y="135" font-size="18" font-weight="bold" text-anchor="middle" fill="white">🔧 Jeneratör</text>
-                            
-                            <!-- GES -->
-                            <rect x="10" y="180" width="100" height="60" fill="#51CF66" stroke="#2b8a3e" stroke-width="2" rx="5"/>
-                            <text x="60" y="215" font-size="18" font-weight="bold" text-anchor="middle" fill="white">☀️ GES</text>
-                        </g>
+                <div class="energy-flow-container">
+                    <!-- AKIŞ DİYAGRAMI -->
+                    <div class="flow-diagram">
+                        <!-- SOL: ENERJİ KAYNAKLARI -->
+                        <div class="flow-section">
+                            <h3>Enerji Kaynakları</h3>
+                            <div class="flow-box">🔌 Şebeke</div>
+                            <div class="flow-box">🔧 Jeneratör</div>
+                            <div class="flow-box">☀️ GES</div>
+                        </div>
 
-                        <!-- OKULLAR (Ortada) -->
-                        <g id="distribution">
-                            <text x="230" y="25" font-size="16" font-weight="bold" fill="#667eea">DAĞITIM</text>
-                            
-                            <!-- OG -->
-                            <rect x="180" y="45" width="100" height="55" fill="#4C6EF5" stroke="#3c5dd5" stroke-width="2" rx="5"/>
-                            <text x="230" y="80" font-size="14" font-weight="bold" text-anchor="middle" fill="white">OG Barası</text>
-                            
-                            <!-- Trafo -->
-                            <rect x="180" y="110" width="100" height="55" fill="#339AF0" stroke="#1971c2" stroke-width="2" rx="5"/>
-                            <text x="230" y="145" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Transformatör</text>
-                            
-                            <!-- AG -->
-                            <rect x="180" y="175" width="100" height="55" fill="#15AABF" stroke="#0b7285" stroke-width="2" rx="5"/>
-                            <text x="230" y="210" font-size="14" font-weight="bold" text-anchor="middle" fill="white">AG Panolar</text>
-                        </g>
+                        <div class="flow-arrow">→</div>
 
-                        <!-- OKULLAR (Sağda) -->
-                        <g id="consumers">
-                            <text x="620" y="25" font-size="16" font-weight="bold" fill="#667eea">TÜKETİCİLER</text>
-                            
-                            <!-- Vinç -->
-                            <rect x="570" y="45" width="100" height="50" fill="#7950F2" stroke="#5f3dc4" stroke-width="2" rx="5"/>
-                            <text x="620" y="80" font-size="13" font-weight="bold" text-anchor="middle" fill="white">🏗️ Vinçler</text>
-                            
-                            <!-- Forklift -->
-                            <rect x="570" y="105" width="100" height="50" fill="#9775FA" stroke="#7950f2" stroke-width="2" rx="5"/>
-                            <text x="620" y="135" font-size="13" font-weight="bold" text-anchor="middle" fill="white">🚛 Forkliftler</text>
-                            
-                            <!-- Aydınlatma -->
-                            <rect x="570" y="165" width="100" height="50" fill="#CC5DE8" stroke="#a61e4d" stroke-width="2" rx="5"/>
-                            <text x="620" y="195" font-size="13" font-weight="bold" text-anchor="middle" fill="white">💡 Aydınlatma</text>
-                            
-                            <!-- Diğer -->
-                            <rect x="570" y="225" width="100" height="50" fill="#F06595" stroke="#c2255c" stroke-width="2" rx="5"/>
-                            <text x="620" y="255" font-size="13" font-weight="bold" text-anchor="middle" fill="white">🏢 Diğer</text>
-                        </g>
+                        <!-- ORTA: SCADA CONTROL -->
+                        <div class="flow-section">
+                            <h3>Power Operation</h3>
+                            <div class="flow-box flow-box-highlight">⚡ SCADA<br><span style="font-size: 0.8em;">Gerçek Zamanlı<br>Kontrol & İzleme</span></div>
+                        </div>
 
-                        <!-- OKLAR - Kaynaklar -> Dağıtım -->
-                        <path d="M 110 50 L 180 50" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
-                        <path d="M 110 130 L 180 137" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
-                        <path d="M 110 210 L 180 202" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                        <div class="flow-arrow">→</div>
 
-                        <!-- OKLAR - Dağıtım -> Tüketiciler -->
-                        <path d="M 280 50 L 570 70" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
-                        <path d="M 280 120 L 570 130" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
-                        <path d="M 280 190 L 570 190" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
-                        <path d="M 280 205 L 570 250" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                        <!-- SAĞ: PME RAPORLAMA -->
+                        <div class="flow-section">
+                            <h3>Power Monitoring Expert</h3>
+                            <div class="flow-box flow-box-highlight">📊 WEB<br><span style="font-size: 0.8em;">Raporlar, Veriler,<br>Analiz & KPI</span></div>
+                        </div>
+                    </div>
 
-                        <!-- Arrow marker definition -->
-                        <defs>
-                            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                                <polygon points="0 0, 10 3, 0 6" fill="#667eea" />
-                            </marker>
-                        </defs>
-
-                        <!-- Platform Monitoring (Altında) -->
-                        <g id="platform">
-                            <rect x="30" y="280" width="840" height="50" fill="#667eea" stroke="#3c3c99" stroke-width="2" rx="5"/>
-                            <text x="450" y="310" font-size="18" font-weight="bold" text-anchor="middle" fill="white">📡 MERKEZI ENERJİ YÖNETİM PLATFORMU</text>
-                            <text x="450" y="315" font-size="12" text-anchor="middle" fill="white">(Power Operation SCADA + Power Monitoring Expert)</text>
-                        </g>
-                    </svg>
+                    <!-- SAHADA GÖRÜNEN EKIPMANLAR -->
+                    <div class="field-diagram">
+                        <div class="field-title">Sahada İzlenen Ekipmanlar & Sistemler</div>
+                        <div class="field-grid">
+                            <div class="field-item">
+                                <div class="field-icon">🏗️</div>
+                                <div class="field-label">Trafo</div>
+                                <div style="font-size: 0.85em; color: #666; margin-top: 5px;">OG/AG Dağıtım</div>
+                            </div>
+                            <div class="field-item">
+                                <div class="field-icon">📊</div>
+                                <div class="field-label">Enerji Analizörleri</div>
+                                <div style="font-size: 0.85em; color: #666; margin-top: 5px;">Gerçek Zamanlı Veri</div>
+                            </div>
+                            <div class="field-item">
+                                <div class="field-icon">🔌</div>
+                                <div class="field-label">AG Panoları</div>
+                                <div style="font-size: 0.85em; color: #666; margin-top: 5px;">Elektrik Dağıtımı</div>
+                            </div>
+                            <div class="field-item">
+                                <div class="field-icon">🔧</div>
+                                <div class="field-label">Jeneratörler</div>
+                                <div style="font-size: 0.85em; color: #666; margin-top: 5px;">Yedek Enerji</div>
+                            </div>
+                            <div class="field-item">
+                                <div class="field-icon">🏗️</div>
+                                <div class="field-label">Vinçler</div>
+                                <div style="font-size: 0.85em; color: #666; margin-top: 5px;">Operasyon Yükü</div>
+                            </div>
+                            <div class="field-item">
+                                <div class="field-icon">🚛</div>
+                                <div class="field-label">Elektrikli Forklift</div>
+                                <div style="font-size: 0.85em; color: #666; margin-top: 5px;">Şarj Yönetimi</div>
+                            </div>
+                            <div class="field-item">
+                                <div class="field-icon">💡</div>
+                                <div class="field-label">Aydınlatma</div>
+                                <div style="font-size: 0.85em; color: #666; margin-top: 5px;">Saha Kumlama</div>
+                            </div>
+                            <div class="field-item">
+                                <div class="field-icon">🚢</div>
+                                <div class="field-label">Gemi Bağlantısı</div>
+                                <div style="font-size: 0.85em; color: #666; margin-top: 5px;">Enerji Tüketimi</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <p style="text-align: center; margin-top: 20px; color: #667eea; font-size: 1.1em;"><strong>Tüm enerji akışı merkezi platform tarafından izleniyor ve yönetiliyor</strong></p>
+                <div style="margin-top: 20px; text-align: center; font-size: 1.05em; color: #667eea;">
+                    <p><strong>Tüm ekipmanlar → SCADA'dan izleniyor → PME'de raporlanıyor</strong></p>
+                </div>
             </div>
 
             <!-- SLAYT 9 - İLK AŞAMA -->
