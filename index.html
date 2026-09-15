@@ -218,17 +218,13 @@
         }
 
         /* Diagram Styles */
-        .diagram {
+        .diagram-container {
             background: white;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
             margin: 20px 0;
-            text-align: center;
-            font-family: 'Courier New', monospace;
-            font-size: 0.95em;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: auto;
+            display: flex;
+            justify-content: center;
         }
 
         .grid-2 {
@@ -460,23 +456,93 @@
                 </div>
             </div>
 
-            <!-- SLAYT 8 - ENERJI AKIŞI -->
+            <!-- SLAYT 8 - ENERJI AKIŞI (YENİ GÖRSEL) -->
             <div class="slide" id="slide-8">
                 <h2>⚡ ENERJİ AKIŞI - KAYNAKTAN TÜKETİCİYE</h2>
-                <div class="diagram">
-KAYNAKLAR              DAĞITIM                TÜKETİCİLER
-┌──────────┐          ┌────────────┐         ┌──────────────┐
-│ Şebeke   │──┐       │ OG Barası  │──┐      │ Vinçler      │
-│Jeneratör │──┼──────┤ Trafolar   │──┼──────│Forkliftler   │
-│  GES     │──┘       │ AG Panolar │──┘      │Aydınlatma    │
-└──────────┘          └────────────┘         │Gemi Bağlantı │
-                                             │Yapılar       │
-                                             └──────────────┘
-                           ⬇️
-                 EcoStruxure Platform
-              (Merkezi İzleme & Yönetim)
+                
+                <div class="diagram-container">
+                    <svg width="900" height="350" viewBox="0 0 900 350">
+                        <!-- KAYNAKLAR (Solda) -->
+                        <g id="sources">
+                            <!-- Şebeke -->
+                            <rect x="10" y="20" width="100" height="60" fill="#FF6B6B" stroke="#c92a2a" stroke-width="2" rx="5"/>
+                            <text x="60" y="55" font-size="18" font-weight="bold" text-anchor="middle" fill="white">⚡ Şebeke</text>
+                            
+                            <!-- Jeneratör -->
+                            <rect x="10" y="100" width="100" height="60" fill="#FFA94D" stroke="#e67700" stroke-width="2" rx="5"/>
+                            <text x="60" y="135" font-size="18" font-weight="bold" text-anchor="middle" fill="white">🔧 Jeneratör</text>
+                            
+                            <!-- GES -->
+                            <rect x="10" y="180" width="100" height="60" fill="#51CF66" stroke="#2b8a3e" stroke-width="2" rx="5"/>
+                            <text x="60" y="215" font-size="18" font-weight="bold" text-anchor="middle" fill="white">☀️ GES</text>
+                        </g>
+
+                        <!-- OKULLAR (Ortada) -->
+                        <g id="distribution">
+                            <text x="230" y="25" font-size="16" font-weight="bold" fill="#667eea">DAĞITIM</text>
+                            
+                            <!-- OG -->
+                            <rect x="180" y="45" width="100" height="55" fill="#4C6EF5" stroke="#3c5dd5" stroke-width="2" rx="5"/>
+                            <text x="230" y="80" font-size="14" font-weight="bold" text-anchor="middle" fill="white">OG Barası</text>
+                            
+                            <!-- Trafo -->
+                            <rect x="180" y="110" width="100" height="55" fill="#339AF0" stroke="#1971c2" stroke-width="2" rx="5"/>
+                            <text x="230" y="145" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Transformatör</text>
+                            
+                            <!-- AG -->
+                            <rect x="180" y="175" width="100" height="55" fill="#15AABF" stroke="#0b7285" stroke-width="2" rx="5"/>
+                            <text x="230" y="210" font-size="14" font-weight="bold" text-anchor="middle" fill="white">AG Panolar</text>
+                        </g>
+
+                        <!-- OKULLAR (Sağda) -->
+                        <g id="consumers">
+                            <text x="620" y="25" font-size="16" font-weight="bold" fill="#667eea">TÜKETİCİLER</text>
+                            
+                            <!-- Vinç -->
+                            <rect x="570" y="45" width="100" height="50" fill="#7950F2" stroke="#5f3dc4" stroke-width="2" rx="5"/>
+                            <text x="620" y="80" font-size="13" font-weight="bold" text-anchor="middle" fill="white">🏗️ Vinçler</text>
+                            
+                            <!-- Forklift -->
+                            <rect x="570" y="105" width="100" height="50" fill="#9775FA" stroke="#7950f2" stroke-width="2" rx="5"/>
+                            <text x="620" y="135" font-size="13" font-weight="bold" text-anchor="middle" fill="white">🚛 Forkliftler</text>
+                            
+                            <!-- Aydınlatma -->
+                            <rect x="570" y="165" width="100" height="50" fill="#CC5DE8" stroke="#a61e4d" stroke-width="2" rx="5"/>
+                            <text x="620" y="195" font-size="13" font-weight="bold" text-anchor="middle" fill="white">💡 Aydınlatma</text>
+                            
+                            <!-- Diğer -->
+                            <rect x="570" y="225" width="100" height="50" fill="#F06595" stroke="#c2255c" stroke-width="2" rx="5"/>
+                            <text x="620" y="255" font-size="13" font-weight="bold" text-anchor="middle" fill="white">🏢 Diğer</text>
+                        </g>
+
+                        <!-- OKLAR - Kaynaklar -> Dağıtım -->
+                        <path d="M 110 50 L 180 50" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                        <path d="M 110 130 L 180 137" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                        <path d="M 110 210 L 180 202" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+                        <!-- OKLAR - Dağıtım -> Tüketiciler -->
+                        <path d="M 280 50 L 570 70" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                        <path d="M 280 120 L 570 130" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                        <path d="M 280 190 L 570 190" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                        <path d="M 280 205 L 570 250" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+                        <!-- Arrow marker definition -->
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                <polygon points="0 0, 10 3, 0 6" fill="#667eea" />
+                            </marker>
+                        </defs>
+
+                        <!-- Platform Monitoring (Altında) -->
+                        <g id="platform">
+                            <rect x="30" y="280" width="840" height="50" fill="#667eea" stroke="#3c3c99" stroke-width="2" rx="5"/>
+                            <text x="450" y="310" font-size="18" font-weight="bold" text-anchor="middle" fill="white">📡 MERKEZI ENERJİ YÖNETİM PLATFORMU</text>
+                            <text x="450" y="315" font-size="12" text-anchor="middle" fill="white">(Power Operation SCADA + Power Monitoring Expert)</text>
+                        </g>
+                    </svg>
                 </div>
-                <p style="text-align: center; margin-top: 20px; color: #667eea;"><strong>Enerji akışının kaynaktan tüketiciye kadar tam görünürlüğü</strong></p>
+
+                <p style="text-align: center; margin-top: 20px; color: #667eea; font-size: 1.1em;"><strong>Tüm enerji akışı merkezi platform tarafından izleniyor ve yönetiliyor</strong></p>
             </div>
 
             <!-- SLAYT 9 - İLK AŞAMA -->
