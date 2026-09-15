@@ -11,30 +11,43 @@
             box-sizing: border-box;
         }
 
-        body {
+        html, body {
+            width: 100%;
+            height: 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #000;
+            overflow: hidden;
+        }
+
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px;
         }
 
         .presentation-container {
             width: 100%;
-            max-width: 1000px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .slides-wrapper {
+            flex: 1;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .slide {
             display: none;
-            padding: 60px 50px;
-            min-height: 600px;
+            width: 100%;
+            height: 100%;
+            padding: 80px 100px;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            overflow-y: auto;
             animation: fadeIn 0.5s ease-in;
         }
 
@@ -42,6 +55,19 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+        }
+
+        .slide::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .slide::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .slide::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 4px;
         }
 
         @keyframes fadeIn {
@@ -61,6 +87,7 @@
             font-size: 3.5em;
             margin-bottom: 20px;
             font-weight: 700;
+            line-height: 1.2;
         }
 
         .slide-kapak .subtitle {
@@ -77,7 +104,7 @@
 
         /* Slide 2-18 Stil */
         .slide h2 {
-            font-size: 2.5em;
+            font-size: 2.8em;
             color: #667eea;
             margin-bottom: 40px;
             border-bottom: 4px solid #667eea;
@@ -85,17 +112,22 @@
         }
 
         .slide h3 {
-            font-size: 1.5em;
+            font-size: 1.6em;
             color: #764ba2;
             margin-top: 25px;
             margin-bottom: 15px;
         }
 
+        .slide h4 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
         .slide p, .slide li {
-            font-size: 1.1em;
+            font-size: 1.15em;
             line-height: 1.8;
             color: #333;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .slide ul {
@@ -103,17 +135,17 @@
         }
 
         .slide li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .emoji {
             font-size: 1.3em;
-            margin-right: 10px;
+            margin-right: 8px;
         }
 
         .highlight {
             background: #fff3cd;
-            padding: 20px;
+            padding: 20px 25px;
             border-left: 5px solid #ffc107;
             border-radius: 5px;
             margin: 20px 0;
@@ -121,7 +153,7 @@
 
         .box {
             background: white;
-            padding: 20px;
+            padding: 20px 25px;
             border-radius: 10px;
             margin: 15px 0;
             border-left: 5px solid #667eea;
@@ -147,6 +179,7 @@
             padding: 20px 50px;
             background: #f8f9fa;
             border-top: 1px solid #e0e0e0;
+            height: 80px;
         }
 
         button {
@@ -155,9 +188,10 @@
             border: none;
             padding: 12px 30px;
             border-radius: 25px;
-            font-size: 1em;
+            font-size: 1.05em;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-weight: 600;
         }
 
         button:hover {
@@ -173,13 +207,14 @@
         }
 
         .slide-counter {
-            font-size: 1.1em;
+            font-size: 1.2em;
             color: #666;
             font-weight: bold;
         }
 
         .slide-title-counter {
             color: #667eea;
+            font-size: 1.4em;
         }
 
         /* Diagram Styles */
@@ -189,7 +224,7 @@
             border-radius: 10px;
             margin: 20px 0;
             text-align: center;
-            font-family: monospace;
+            font-family: 'Courier New', monospace;
             font-size: 0.95em;
             line-height: 1.6;
             color: #333;
@@ -212,7 +247,7 @@
 
         .card {
             background: white;
-            padding: 20px;
+            padding: 20px 25px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
@@ -220,221 +255,215 @@
         .card h4 {
             color: #667eea;
             margin-bottom: 10px;
-            font-size: 1.2em;
+            font-size: 1.15em;
         }
 
-        .timer {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-        }
-
-        @media (max-width: 768px) {
-            .slide {
-                padding: 30px 20px;
-                min-height: auto;
-            }
-            
-            .slide h2 {
-                font-size: 1.8em;
-            }
-
-            .slide p, .slide li {
-                font-size: 1em;
-            }
-
-            .grid-2, .grid-3 {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-container {
-                padding: 15px 20px;
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-
-            button {
-                padding: 10px 20px;
-                font-size: 0.9em;
-            }
+        .card p {
+            font-size: 1em;
+            margin-bottom: 8px;
         }
 
         .keyboard-hint {
             position: fixed;
-            bottom: 10px;
-            right: 20px;
-            font-size: 0.8em;
+            bottom: 20px;
+            right: 30px;
+            font-size: 0.9em;
             color: #999;
-            background: rgba(255,255,255,0.9);
-            padding: 10px 15px;
+            background: rgba(255,255,255,0.95);
+            padding: 12px 18px;
             border-radius: 5px;
+            pointer-events: none;
+        }
+
+        @media (max-width: 1920px) {
+            .slide {
+                padding: 60px 80px;
+            }
+
+            .slide h2 {
+                font-size: 2.5em;
+            }
+
+            .slide h3 {
+                font-size: 1.4em;
+            }
+
+            .slide p, .slide li {
+                font-size: 1.05em;
+            }
+
+            .slide-kapak h1 {
+                font-size: 3em;
+            }
+
+            .slide-kapak .subtitle {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="presentation-container">
-        <!-- SLAYT 1 - KAPAK -->
-        <div class="slide slide-kapak active" id="slide-1">
-            <h1>🏛️ AKILLI LİMAN ENERJİ VE ALTYAPI YÖNETİM PLATFORMU</h1>
-            <p class="subtitle">SAFİ Derince Uluslararası Limanı</p>
-            <p class="subtitle">Teknik Teklif Sunusu</p>
-            <div class="detail">
-                <p>📅 Tarih: 08.09.2026</p>
-                <p>👤 Hazırlayan: Caner ÇELEBİ - GCS Yazılım</p>
-            </div>
-        </div>
-
-        <!-- SLAYT 2 - GÜNDEM -->
-        <div class="slide" id="slide-2">
-            <h2>📋 SUNUMUN AKIŞI</h2>
-            <div class="grid-2">
-                <div class="box">
-                    <h4>1️⃣ Mevcut Durum & Zorluklar</h4>
-                </div>
-                <div class="box">
-                    <h4>2️⃣ Önerilen Çözüm</h4>
-                </div>
-                <div class="box">
-                    <h4>3️⃣ SAFİ'ye Kazanımlar</h4>
-                </div>
-                <div class="box">
-                    <h4>4️⃣ İlk Aşama (Kuru Yük)</h4>
-                </div>
-                <div class="box">
-                    <h4>5️⃣ Gelecek Yol Haritası</h4>
-                </div>
-                <div class="box">
-                    <h4>6️⃣ Stratejik Değer</h4>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLAYT 3 - MEVCUT DURUM -->
-        <div class="slide" id="slide-3">
-            <h2>⚡ MEVCUT DURUM - NEDEN SİSTEM GEREK?</h2>
-            <h3>SAFİ Derince'nin Enerji Altyapısı:</h3>
-            <div class="box">
-                <p>✓ Elektrik Dağıtım Sistemleri (OG/AG)<br>
-                ✓ Jeneratörler + Step-Up Trafolar<br>
-                ✓ Güneş Enerjisi Sistemi (GES)<br>
-                ✓ UPS Sistemleri<br>
-                ✓ Vinçler, Elektrikli Forkliftler<br>
-                ✓ Aydınlatma Sistemleri<br>
-                ✓ Gemi Elektrik Bağlantıları</p>
-            </div>
-            <h3>❌ SORUNLAR:</h3>
-            <ul>
-                <li><span class="emoji">📊</span>Farklı cihazlarda ayrı ayrı izleme</li>
-                <li><span class="emoji">💰</span>Enerji maliyetlerinin operasyonlarla bağı yok</li>
-                <li><span class="emoji">🔴</span>Kayıplar ve verimsizlikler görülmüyor</li>
-                <li><span class="emoji">🔧</span>Bakım kararları veriye dayanmıyor</li>
-                <li><span class="emoji">📈</span>Gelecekteki ölçeklenme imkânı sınırlı</li>
-            </ul>
-        </div>
-
-        <!-- SLAYT 4 - HEDEF -->
-        <div class="slide" id="slide-4">
-            <h2>🎯 HEDEF - ENERJİ YÖNETİMİNİN DÖNÜŞÜMÜ</h2>
-            <div class="highlight">
-                <p style="font-size: 1.2em; margin: 0;"><strong>❌ ESKI:</strong> "Ne kadar tüketiyoruz?"</p>
-            </div>
-            <div style="text-align: center; margin: 20px 0; font-size: 1.5em; color: #667eea;">⬇️</div>
-            <div class="highlight" style="background: #d4edda; border-left-color: #28a745;">
-                <p style="font-size: 1.2em; margin: 0;"><strong>✅ YENİ:</strong> "Enerjiyi nerede tüketiyoruz, kim tüketiyor, bunun maliyeti nedir, nerede kayıp oluşuyor?"</p>
-            </div>
-            <div class="box" style="margin-top: 30px; background: #667eea; color: white; border: none;">
-                <p style="text-align: center; font-size: 1.3em; margin: 0;"><strong>📡 Tek Platform Üzerinden Merkezi İzleme</strong></p>
-            </div>
-        </div>
-
-        <!-- SLAYT 5 - ÖNERİLEN ÇÖZÜM -->
-        <div class="slide" id="slide-5">
-            <h2>💡 ÖNERİLEN ÇÖZÜM</h2>
-            <h3>Temel Prensip:</h3>
-            <div class="box" style="background: #667eea; color: white; border: none; text-align: center; font-size: 1.2em;">
-                <p style="margin: 0;"><strong>İZLE → ÖLÇ → ANALİZ ET → YÖNET → OPTİMİZE ET</strong></p>
-            </div>
-            
-            <h3 style="margin-top: 35px;">🔧 Teknoloji Ortakları:</h3>
-            <div class="grid-2">
-                <div class="box">
-                    <h4>📊 Schneider Electric Power Operation</h4>
-                    <p><strong>SCADA Sistemi</strong></p>
-                    <p>• Operasyonel izleme<br>
-                    • Gerçek zamanlı kontrol<br>
-                    • Kesici, trafo, jeneratör durumları<br>
-                    • HMI ekranları</p>
-                </div>
-                <div class="box">
-                    <h4>📈 Schneider Electric PME</h4>
-                    <p><strong>Enerji Yönetim Platformu</strong></p>
-                    <p>• Enerji izleme & analizi<br>
-                    • Tarihçeli raporlama<br>
-                    • Dashboard'lar<br>
-                    • KPI göstergeleri</p>
+        <div class="slides-wrapper">
+            <!-- SLAYT 1 - KAPAK -->
+            <div class="slide slide-kapak active" id="slide-1">
+                <h1>🏛️ AKILLI LİMAN ENERJİ VE ALTYAPI YÖNETİM PLATFORMU</h1>
+                <p class="subtitle">SAFİ Derince Uluslararası Limanı</p>
+                <p class="subtitle">Teknik Teklif Sunusu</p>
+                <div class="detail">
+                    <p>📅 Tarih: 08.09.2026</p>
+                    <p>👤 Hazırlayan: Caner ÇELEBİ - GCS Yazılım</p>
                 </div>
             </div>
 
-            <div class="box" style="margin-top: 25px; background: #d4edda; border-left-color: #28a745; text-align: center;">
-                <p style="margin: 0; font-size: 1.1em;"><strong>Sonuç: Bir platform altında tüm enerji altyapısının merkezi görünürlüğü ve kontrolü</strong></p>
-            </div>
-        </div>
-
-        <!-- SLAYT 6 - KAZANIMLAR 1/2 -->
-        <div class="slide" id="slide-6">
-            <h2>🏆 SAFİ'YE KATACAĞIMIZ DEĞER (1/2)</h2>
-            
-            <div class="grid-2">
-                <div class="card">
-                    <h4>1️⃣ Merkezi Görünürlük</h4>
-                    <p>Tüm enerji kaynakları, dağıtım noktaları ve tüketicileri tek ekranda görmek</p>
-                </div>
-                <div class="card">
-                    <h4>2️⃣ Enerji Maliyeti</h4>
-                    <p>Toplam, operasyon bazında, ekipman bazında ve zaman bazında maliyet analizi</p>
-                </div>
-                <div class="card">
-                    <h4>3️⃣ Kayıp Analizi</h4>
-                    <p>Dağıtım kayıpları, ölçüm farklılıkları ve enerji bilançosu oluşturma</p>
-                </div>
-                <div class="card">
-                    <h4>4️⃣ Peak Demand</h4>
-                    <p>Yüksek tüketim zamanlarını görme ve yükleri optimize etme</p>
+            <!-- SLAYT 2 - GÜNDEM -->
+            <div class="slide" id="slide-2">
+                <h2>📋 SUNUMUN AKIŞI</h2>
+                <div class="grid-2">
+                    <div class="box">
+                        <h4>1️⃣ Mevcut Durum & Zorluklar</h4>
+                    </div>
+                    <div class="box">
+                        <h4>2️⃣ Önerilen Çözüm</h4>
+                    </div>
+                    <div class="box">
+                        <h4>3️⃣ SAFİ'ye Kazanımlar</h4>
+                    </div>
+                    <div class="box">
+                        <h4>4️⃣ İlk Aşama (Kuru Yük)</h4>
+                    </div>
+                    <div class="box">
+                        <h4>5️⃣ Gelecek Yol Haritası</h4>
+                    </div>
+                    <div class="box">
+                        <h4>6️⃣ Stratejik Değer</h4>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- SLAYT 7 - KAZANIMLAR 2/2 -->
-        <div class="slide" id="slide-7">
-            <h2>🏆 SAFİ'YE KATACAĞIMIZ DEĞER (2/2)</h2>
-            
-            <div class="grid-2">
-                <div class="card">
-                    <h4>5️⃣ Veriye Dayalı Bakım</h4>
-                    <p>Ekipman davranışını takip, erken uyarı ve proaktif bakım</p>
+            <!-- SLAYT 3 - MEVCUT DURUM -->
+            <div class="slide" id="slide-3">
+                <h2>⚡ MEVCUT DURUM - NEDEN SİSTEM GEREK?</h2>
+                <h3>SAFİ Derince'nin Enerji Altyapısı:</h3>
+                <div class="box">
+                    <p>✓ Elektrik Dağıtım Sistemleri (OG/AG)<br>
+                    ✓ Jeneratörler + Step-Up Trafolar<br>
+                    ✓ Güneş Enerjisi Sistemi (GES)<br>
+                    ✓ UPS Sistemleri<br>
+                    ✓ Vinçler, Elektrikli Forkliftler<br>
+                    ✓ Aydınlatma Sistemleri<br>
+                    ✓ Gemi Elektrik Bağlantıları</p>
                 </div>
-                <div class="card">
-                    <h4>6️⃣ Iyileştirmeleri Ölçme</h4>
-                    <p>Yatırımdan öncesi/sonrasını karşılaştırma ve ROI hesaplaması</p>
+                <h3>❌ SORUNLAR:</h3>
+                <ul>
+                    <li><span class="emoji">📊</span>Farklı cihazlarda ayrı ayrı izleme</li>
+                    <li><span class="emoji">💰</span>Enerji maliyetlerinin operasyonlarla bağı yok</li>
+                    <li><span class="emoji">🔴</span>Kayıplar ve verimsizlikler görülmüyor</li>
+                    <li><span class="emoji">🔧</span>Bakım kararları veriye dayanmıyor</li>
+                    <li><span class="emoji">📈</span>Gelecekteki ölçeklenme imkânı sınırlı</li>
+                </ul>
+            </div>
+
+            <!-- SLAYT 4 - HEDEF -->
+            <div class="slide" id="slide-4">
+                <h2>🎯 HEDEF - ENERJİ YÖNETİMİNİN DÖNÜŞÜMÜ</h2>
+                <div class="highlight">
+                    <p style="font-size: 1.25em; margin: 0;"><strong>❌ ESKI:</strong> "Ne kadar tüketiyoruz?"</p>
                 </div>
-                <div class="card">
-                    <h4>7️⃣ Gelecek Büyüme</h4>
-                    <p>Diğer tesislere genişletilebilir ve ölçeklenebilir platform</p>
+                <div style="text-align: center; margin: 25px 0; font-size: 1.8em; color: #667eea;">⬇️</div>
+                <div class="highlight" style="background: #d4edda; border-left-color: #28a745;">
+                    <p style="font-size: 1.25em; margin: 0;"><strong>✅ YENİ:</strong> "Enerjiyi nerede tüketiyoruz, kim tüketiyor, bunun maliyeti nedir, nerede kayıp oluşuyor?"</p>
                 </div>
-                <div class="card">
-                    <h4>8️⃣ Operasyon Maliyeti</h4>
-                    <p>Hangi operasyon ne kadar enerji tüketiyor gerçekçi veriler</p>
+                <div class="box" style="margin-top: 35px; background: #667eea; color: white; border: none;">
+                    <p style="text-align: center; font-size: 1.4em; margin: 0;"><strong>📡 Tek Platform Üzerinden Merkezi İzleme</strong></p>
                 </div>
             </div>
-        </div>
 
-        <!-- SLAYT 8 - ENERJI AKIŞI -->
-        <div class="slide" id="slide-8">
-            <h2>⚡ ENERJİ AKIŞI - KAYNAKTAN TÜKETİCİYE</h2>
-            <div class="diagram">
+            <!-- SLAYT 5 - ÖNERİLEN ÇÖZÜM -->
+            <div class="slide" id="slide-5">
+                <h2>💡 ÖNERİLEN ÇÖZÜM</h2>
+                <h3>Temel Prensip:</h3>
+                <div class="box" style="background: #667eea; color: white; border: none; text-align: center; font-size: 1.25em;">
+                    <p style="margin: 0;"><strong>İZLE → ÖLÇ → ANALİZ ET → YÖNET → OPTİMİZE ET</strong></p>
+                </div>
+                
+                <h3 style="margin-top: 35px;">🔧 Teknoloji Ortakları:</h3>
+                <div class="grid-2">
+                    <div class="box">
+                        <h4>📊 Schneider Electric Power Operation</h4>
+                        <p><strong>SCADA Sistemi</strong></p>
+                        <p>• Operasyonel izleme<br>
+                        • Gerçek zamanlı kontrol<br>
+                        • Kesici, trafo, jeneratör durumları<br>
+                        • HMI ekranları</p>
+                    </div>
+                    <div class="box">
+                        <h4>📈 Schneider Electric PME</h4>
+                        <p><strong>Enerji Yönetim Platformu</strong></p>
+                        <p>• Enerji izleme & analizi<br>
+                        • Tarihçeli raporlama<br>
+                        • Dashboard'lar<br>
+                        • KPI göstergeleri</p>
+                    </div>
+                </div>
+
+                <div class="box" style="margin-top: 20px; background: #d4edda; border-left-color: #28a745; text-align: center;">
+                    <p style="margin: 0; font-size: 1.15em;"><strong>Sonuç: Bir platform altında tüm enerji altyapısının merkezi görünürlüğü ve kontrolü</strong></p>
+                </div>
+            </div>
+
+            <!-- SLAYT 6 - KAZANIMLAR 1/2 -->
+            <div class="slide" id="slide-6">
+                <h2>🏆 SAFİ'YE KATACAĞIMIZ DEĞER (1/2)</h2>
+                
+                <div class="grid-2">
+                    <div class="card">
+                        <h4>1️⃣ Merkezi Görünürlük</h4>
+                        <p>Tüm enerji kaynakları, dağıtım noktaları ve tüketicileri tek ekranda görmek</p>
+                    </div>
+                    <div class="card">
+                        <h4>2️⃣ Enerji Maliyeti</h4>
+                        <p>Toplam, operasyon bazında, ekipman bazında ve zaman bazında maliyet analizi</p>
+                    </div>
+                    <div class="card">
+                        <h4>3️⃣ Kayıp Analizi</h4>
+                        <p>Dağıtım kayıpları, ölçüm farklılıkları ve enerji bilançosu oluşturma</p>
+                    </div>
+                    <div class="card">
+                        <h4>4️⃣ Peak Demand</h4>
+                        <p>Yüksek tüketim zamanlarını görme ve yükleri optimize etme</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLAYT 7 - KAZANIMLAR 2/2 -->
+            <div class="slide" id="slide-7">
+                <h2>🏆 SAFİ'YE KATACAĞIMIZ DEĞER (2/2)</h2>
+                
+                <div class="grid-2">
+                    <div class="card">
+                        <h4>5️⃣ Veriye Dayalı Bakım</h4>
+                        <p>Ekipman davranışını takip, erken uyarı ve proaktif bakım</p>
+                    </div>
+                    <div class="card">
+                        <h4>6️⃣ Iyileştirmeleri Ölçme</h4>
+                        <p>Yatırımdan öncesi/sonrasını karşılaştırma ve ROI hesaplaması</p>
+                    </div>
+                    <div class="card">
+                        <h4>7️⃣ Gelecek Büyüme</h4>
+                        <p>Diğer tesislere genişletilebilir ve ölçeklenebilir platform</p>
+                    </div>
+                    <div class="card">
+                        <h4>8️⃣ Operasyon Maliyeti</h4>
+                        <p>Hangi operasyon ne kadar enerji tüketiyor gerçekçi veriler</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLAYT 8 - ENERJI AKIŞI -->
+            <div class="slide" id="slide-8">
+                <h2>⚡ ENERJİ AKIŞI - KAYNAKTAN TÜKETİCİYE</h2>
+                <div class="diagram">
 KAYNAKLAR              DAĞITIM                TÜKETİCİLER
 ┌──────────┐          ┌────────────┐         ┌──────────────┐
 │ Şebeke   │──┐       │ OG Barası  │──┐      │ Vinçler      │
@@ -446,319 +475,320 @@ KAYNAKLAR              DAĞITIM                TÜKETİCİLER
                            ⬇️
                  EcoStruxure Platform
               (Merkezi İzleme & Yönetim)
-            </div>
-            <p style="text-align: center; margin-top: 20px; color: #667eea;"><strong>Enerji akışının kaynaktan tüketiciye kadar tam görünürlüğü</strong></p>
-        </div>
-
-        <!-- SLAYT 9 - İLK AŞAMA -->
-        <div class="slide" id="slide-9">
-            <h2>🚀 İLK AŞAMA - KURU YÜK TESİSİ</h2>
-            
-            <h3>🎯 Hedef:</h3>
-            <p>Kuru yük tesisinin tüm enerji altyapısını merkezi olarak izlemek</p>
-
-            <h3>📡 İzlenecek Ekipmanlar:</h3>
-            <div class="box">
-                <p>✓ OG Koruma Röleleri & Sepam Cihazları<br>
-                ✓ Enerji Analizörleri<br>
-                ✓ AG Dağıtım Sistemleri<br>
-                ✓ Jeneratörler<br>
-                ✓ GES (Güneş Enerjisi)<br>
-                ✓ Trafolar<br>
-                ✓ Tüm haberleşebilen cihazlar</p>
+                </div>
+                <p style="text-align: center; margin-top: 20px; color: #667eea;"><strong>Enerji akışının kaynaktan tüketiciye kadar tam görünürlüğü</strong></p>
             </div>
 
-            <h3>✅ Beklenen Çıktı:</h3>
-            <div class="grid-2">
-                <div class="box box-green">
-                    <p>✓ Merkezi SCADA ekranı</p>
-                </div>
-                <div class="box box-green">
-                    <p>✓ Enerji yönetim platformu</p>
-                </div>
-                <div class="box box-green">
-                    <p>✓ Tarihçeli veri tabanı</p>
-                </div>
-                <div class="box box-green">
-                    <p>✓ Düzenli raporlar</p>
-                </div>
-            </div>
-        </div>
+            <!-- SLAYT 9 - İLK AŞAMA -->
+            <div class="slide" id="slide-9">
+                <h2>🚀 İLK AŞAMA - KURU YÜK TESİSİ</h2>
+                
+                <h3>🎯 Hedef:</h3>
+                <p>Kuru yük tesisinin tüm enerji altyapısını merkezi olarak izlemek</p>
 
-        <!-- SLAYT 10 - KPI'LAR -->
-        <div class="slide" id="slide-10">
-            <h2>📊 KPI'LAR - ENERJİ VERİSİ → OPERASYONEL SONUÇ</h2>
-            
-            <h3>Ham Veri → Aksiyon Verebilen Bilgi</h3>
-
-            <div class="grid-2">
+                <h3>📡 İzlenecek Ekipmanlar:</h3>
                 <div class="box">
-                    <h4>🏗️ Vinç Performansı</h4>
-                    <p>• kWh / çalışma saati<br>
-                    • kWh / elleçlenen ton ← <strong>KPI</strong></p>
+                    <p>✓ OG Koruma Röleleri & Sepam Cihazları<br>
+                    ✓ Enerji Analizörleri<br>
+                    ✓ AG Dağıtım Sistemleri<br>
+                    ✓ Jeneratörler<br>
+                    ✓ GES (Güneş Enerjisi)<br>
+                    ✓ Trafolar<br>
+                    ✓ Tüm haberleşebilen cihazlar</p>
                 </div>
-                <div class="box">
-                    <h4>🚛 Forklift</h4>
-                    <p>• kWh / şarj<br>
-                    • kWh / çalışma saati</p>
+
+                <h3>✅ Beklenen Çıktı:</h3>
+                <div class="grid-2">
+                    <div class="box box-green">
+                        <p>✓ Merkezi SCADA ekranı</p>
+                    </div>
+                    <div class="box box-green">
+                        <p>✓ Enerji yönetim platformu</p>
+                    </div>
+                    <div class="box box-green">
+                        <p>✓ Tarihçeli veri tabanı</p>
+                    </div>
+                    <div class="box box-green">
+                        <p>✓ Düzenli raporlar</p>
+                    </div>
                 </div>
-                <div class="box">
-                    <h4>🚢 Gemi</h4>
-                    <p>• kWh / bağlantı süresi<br>
-                    • kWh / bekletme saati</p>
+            </div>
+
+            <!-- SLAYT 10 - KPI'LAR -->
+            <div class="slide" id="slide-10">
+                <h2>📊 KPI'LAR - ENERJİ VERİSİ → OPERASYONEL SONUÇ</h2>
+                
+                <h3>Ham Veri → Aksiyon Verebilen Bilgi</h3>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <h4>🏗️ Vinç Performansı</h4>
+                        <p>• kWh / çalışma saati<br>
+                        • kWh / elleçlenen ton ← <strong>KPI</strong></p>
+                    </div>
+                    <div class="card">
+                        <h4>🚛 Forklift</h4>
+                        <p>• kWh / şarj<br>
+                        • kWh / çalışma saati</p>
+                    </div>
+                    <div class="card">
+                        <h4>🚢 Gemi</h4>
+                        <p>• kWh / bağlantı süresi<br>
+                        • kWh / bekletme saati</p>
+                    </div>
+                    <div class="card">
+                        <h4>🏭 Tesis Genel</h4>
+                        <p>• kWh / ton yük<br>
+                        • CO₂e göstergeleri</p>
+                    </div>
                 </div>
-                <div class="box">
-                    <h4>🏭 Tesis Genel</h4>
-                    <p>• kWh / ton yük<br>
-                    • CO₂e göstergeleri</p>
+
+                <div class="highlight" style="margin-top: 25px;">
+                    <p><strong>✨ Sonuç:</strong> "Sadece tüketim sayısı değil, operasyonel verimlilik ölçütü"</p>
                 </div>
             </div>
 
-            <div class="highlight" style="margin-top: 25px;">
-                <p><strong>✨ Sonuç:</strong> "Sadece tüketim sayısı değil, operasyonel verimlilik ölçütü"</p>
-            </div>
-        </div>
+            <!-- SLAYT 11 - YOL HARİTASI 1/2 -->
+            <div class="slide" id="slide-11">
+                <h2>🗺️ GELECEĞİN YOL HARİTASI (1/2)</h2>
+                
+                <h3>5 AŞAMALI GELİŞİM:</h3>
 
-        <!-- SLAYT 11 - YOL HARİTASI 1/2 -->
-        <div class="slide" id="slide-11">
-            <h2>🗺️ GELECEĞİN YOL HARİTASI (1/2)</h2>
-            
-            <h3>5 AŞAMALI GELİŞİM:</h3>
+                <div class="box" style="background: #e7f3ff; border-left-color: #667eea;">
+                    <h4>✅ FAZ 1 - İZLE (ŞIMDI)</h4>
+                    <p><strong>Enerji SCADA</strong> - Merkezi görünürlük</p>
+                    <p style="margin-top: 10px; color: #666; font-size: 1em;">OG/AG sistemleri • Jeneratörler • GES • Röleler & Enerji Analizörleri</p>
+                </div>
 
-            <div class="box" style="background: #e7f3ff; border-left-color: #667eea;">
-                <h4>✅ FAZ 1 - İZLE (ŞIMDI)</h4>
-                <p><strong>Enerji SCADA</strong> - Merkezi görünürlük</p>
-                <p style="margin-top: 10px; color: #666;">OG/AG sistemleri • Jeneratörler • GES • Röleler & Enerji Analizörleri</p>
-            </div>
+                <div class="box" style="background: #fff3cd; border-left-color: #ffc107;">
+                    <h4>⏳ FAZ 2 - ÖLÇ (Ay 4-6)</h4>
+                    <p><strong>Detaylı Ölçüm Noktaları</strong></p>
+                    <p style="margin-top: 10px; color: #666; font-size: 1em;">UPS'ler • Vinçler • Forkliftler • Aydınlatma • Su/Yakıt</p>
+                </div>
 
-            <div class="box" style="background: #fff3cd; border-left-color: #ffc107;">
-                <h4>⏳ FAZ 2 - ÖLÇ (Ay 4-6)</h4>
-                <p><strong>Detaylı Ölçüm Noktaları</strong></p>
-                <p style="margin-top: 10px; color: #666;">UPS'ler • Vinçler • Forkliftler • Aydınlatma • Su/Yakıt</p>
-            </div>
-
-            <div class="box" style="background: #e7f5ff; border-left-color: #0066cc;">
-                <h4>⏳ FAZ 3 - ANALİZ ET (Ay 7-12)</h4>
-                <p><strong>Operasyonel KPI'lar</strong></p>
-                <p style="margin-top: 10px; color: #666;">kWh/saat • kWh/ton • Maliyetlenme • Trend analizi • Peak demand</p>
-            </div>
-        </div>
-
-        <!-- SLAYT 12 - YOL HARİTASI 2/2 -->
-        <div class="slide" id="slide-12">
-            <h2>🗺️ GELECEĞİN YOL HARİTASI (2/2)</h2>
-
-            <div class="box" style="background: #e8f5e9; border-left-color: #28a745;">
-                <h4>⏳ FAZ 4 - YÖNET (YIL 2)</h4>
-                <p><strong>Aktif Enerji Yönetimi</strong></p>
-                <p style="margin-top: 10px; color: #666;">Kesici kontrolü • Aydınlatma yönetimi • Akıllı şarj • Peak shaving • Demand management</p>
+                <div class="box" style="background: #e7f5ff; border-left-color: #0066cc;">
+                    <h4>⏳ FAZ 3 - ANALİZ ET (Ay 7-12)</h4>
+                    <p><strong>Operasyonel KPI'lar</strong></p>
+                    <p style="margin-top: 10px; color: #666; font-size: 1em;">kWh/saat • kWh/ton • Maliyetlenme • Trend analizi • Peak demand</p>
+                </div>
             </div>
 
-            <div class="box" style="background: #fce4ec; border-left-color: #e91e63;">
-                <h4>⏳ FAZ 5 - OPTİMİZE ET (YIL 2+)</h4>
-                <p><strong>Akıllı Liman</strong></p>
-                <p style="margin-top: 10px; color: #666;">Anomali tespiti • Predictive Maintenance • Enerji optimizasyonu • Karbon yönetimi • Sürekli iyileştirme</p>
+            <!-- SLAYT 12 - YOL HARİTASI 2/2 -->
+            <div class="slide" id="slide-12">
+                <h2>🗺️ GELECEĞİN YOL HARİTASI (2/2)</h2>
+
+                <div class="box" style="background: #e8f5e9; border-left-color: #28a745;">
+                    <h4>⏳ FAZ 4 - YÖNET (YIL 2)</h4>
+                    <p><strong>Aktif Enerji Yönetimi</strong></p>
+                    <p style="margin-top: 10px; color: #666; font-size: 1em;">Kesici kontrolü • Aydınlatma yönetimi • Akıllı şarj • Peak shaving • Demand management</p>
+                </div>
+
+                <div class="box" style="background: #fce4ec; border-left-color: #e91e63;">
+                    <h4>⏳ FAZ 5 - OPTİMİZE ET (YIL 2+)</h4>
+                    <p><strong>Akıllı Liman</strong></p>
+                    <p style="margin-top: 10px; color: #666; font-size: 1em;">Anomali tespiti • Predictive Maintenance • Enerji optimizasyonu • Karbon yönetimi • Sürekli iyileştirme</p>
+                </div>
+
+                <div class="highlight" style="margin-top: 25px; background: #f3e5f5; border-left-color: #9c27b0;">
+                    <p style="margin: 0;"><strong>🎯 HER FAZDAN SONRA:</strong> Veriler kullanılarak bir sonraki yatırımlar planlanabilir</p>
+                </div>
             </div>
 
-            <div class="highlight" style="margin-top: 25px; background: #f3e5f5; border-left-color: #9c27b0;">
-                <p style="margin: 0;"><strong>🎯 HER FAZDAN SONRA:</strong> Veriler kullanılarak bir sonraki yatırımlar planlanabilir</p>
-            </div>
-        </div>
+            <!-- SLAYT 13 - LİMANIN BÜTÜNÜ -->
+            <div class="slide" id="slide-13">
+                <h2>🌍 LİMANIN BÜTÜNÜ - İLK AŞAMADAN TAM PLATFORM'A</h2>
 
-        <!-- SLAYT 13 - LİMANIN BÜTÜNÜ -->
-        <div class="slide" id="slide-13">
-            <h2>🌍 LİMANIN BÜTÜNÜ - İLK AŞAMADAN TAM PLATFORM'A</h2>
+                <h3>📍 Bugün (FAZ 1):</h3>
+                <div class="box box-yellow">
+                    <p><strong>Kuru Yük Tesisi</strong></p>
+                </div>
 
-            <h3>📍 Bugün (FAZ 1):</h3>
-            <div class="box box-yellow">
-                <p><strong>Kuru Yük Tesisi</strong></p>
-            </div>
+                <h3>📍 Yarın (FAZ 2-5):</h3>
+                <div class="box box-green">
+                    <p>✅ Sıvı Yük Tesisleri<br>
+                    ✅ Diğer OG Dağıtım Noktaları<br>
+                    ✅ OG Vinçleri<br>
+                    ✅ Elektrikli Forkliftler<br>
+                    ✅ Tüm Aydınlatma Sistemleri<br>
+                    ✅ UPS Ağı<br>
+                    ✅ Jeneratör Sistemi<br>
+                    ✅ GES Bütünü<br>
+                    ✅ Tüm Trafolar<br>
+                    ✅ Gemi Elektrik & Su Bağlantıları<br>
+                    ✅ Yardımcı Tesisler</p>
+                </div>
 
-            <h3>📍 Yarın (FAZ 2-5):</h3>
-            <div class="box box-green">
-                <p>✅ Sıvı Yük Tesisleri<br>
-                ✅ Diğer OG Dağıtım Noktaları<br>
-                ✅ OG Vinçleri<br>
-                ✅ Elektrikli Forkliftler<br>
-                ✅ Tüm Aydınlatma Sistemleri<br>
-                ✅ UPS Ağı<br>
-                ✅ Jeneratör Sistemi<br>
-                ✅ GES Bütünü<br>
-                ✅ Tüm Trafolar<br>
-                ✅ Gemi Elektrik & Su Bağlantıları<br>
-                ✅ Yardımcı Tesisler</p>
-            </div>
-
-            <div class="highlight" style="margin-top: 25px;">
-                <p><strong>📊 Sonuç:</strong> "SAFİ Derince Limanı'nın tamamının tek bir merkezi platform altında yönetilmesi"</p>
-            </div>
-        </div>
-
-        <!-- SLAYT 14 - STRATEJİK DEĞER -->
-        <div class="slide" id="slide-14">
-            <h2>💎 STRATEJİK DEĞER</h2>
-
-            <h3 style="color: #dc3545;">❌ ESKI YAKLAŞIM:</h3>
-            <div class="box box-red">
-                <p><strong>"Her yeni tesise yeni sistem kuralım"</strong></p>
-                <p style="margin-top: 10px; font-size: 0.95em;">→ Birbirinden bağımsız sistemler<br>
-                → Farklı ekranlar, farklı raporlar<br>
-                → İçeriş kabiliyeti düşük<br>
-                → Maliyet yüksek</p>
+                <div class="highlight" style="margin-top: 25px;">
+                    <p><strong>📊 Sonuç:</strong> "SAFİ Derince Limanı'nın tamamının tek bir merkezi platform altında yönetilmesi"</p>
+                </div>
             </div>
 
-            <h3 style="color: #28a745; margin-top: 25px;">✅ YENİ YAKLAŞIM:</h3>
-            <div class="box box-green">
-                <p><strong>"Ortak dijital altyapı"</strong></p>
-                <p style="margin-top: 10px; font-size: 0.95em;">→ Tüm yatırımlar aynı platform<br>
-                → Tek yönetim, tek veri kaynağı<br>
-                → Gelecek ölçeklemeye hazır<br>
-                → Maliyet tasarrufu</p>
+            <!-- SLAYT 14 - STRATEJİK DEĞER -->
+            <div class="slide" id="slide-14">
+                <h2>💎 STRATEJİK DEĞER</h2>
+
+                <h3 style="color: #dc3545;">❌ ESKI YAKLAŞIM:</h3>
+                <div class="box box-red">
+                    <p><strong>"Her yeni tesise yeni sistem kuralım"</strong></p>
+                    <p style="margin-top: 10px; font-size: 1em;">→ Birbirinden bağımsız sistemler<br>
+                    → Farklı ekranlar, farklı raporlar<br>
+                    → İçeriş kabiliyeti düşük<br>
+                    → Maliyet yüksek</p>
+                </div>
+
+                <h3 style="color: #28a745; margin-top: 25px;">✅ YENİ YAKLAŞIM:</h3>
+                <div class="box box-green">
+                    <p><strong>"Ortak dijital altyapı"</strong></p>
+                    <p style="margin-top: 10px; font-size: 1em;">→ Tüm yatırımlar aynı platform<br>
+                    → Tek yönetim, tek veri kaynağı<br>
+                    → Gelecek ölçeklemeye hazır<br>
+                    → Maliyet tasarrufu</p>
+                </div>
+
+                <div class="highlight" style="margin-top: 25px; background: #fff3cd; border-left-color: #ffc107;">
+                    <p><strong>💡 ÖNEMLİ:</strong> İlk yatırımın değeri = Gelecekteki tüm enerji yatırımlarının temeli</p>
+                </div>
             </div>
 
-            <div class="highlight" style="margin-top: 25px; background: #fff3cd; border-left-color: #ffc107;">
-                <p><strong>💡 ÖNEMLİ:</strong> İlk yatırımın değeri = Gelecekteki tüm enerji yatırımlarının temeli</p>
-            </div>
-        </div>
+            <!-- SLAYT 15 - DASHBOARD'LAR -->
+            <div class="slide" id="slide-15">
+                <h2>📊 MERKEZI YÖNETİM DASHBOARD'LARI</h2>
 
-        <!-- SLAYT 15 - DASHBOARD'LAR -->
-        <div class="slide" id="slide-15">
-            <h2>📊 MERKEZI YÖNETİM DASHBOARD'LARI</h2>
+                <h3>Farklı Roller, Farklı Görünümler:</h3>
 
-            <h3>Farklı Roller, Farklı Görünümler:</h3>
+                <div class="grid-2">
+                    <div class="card">
+                        <h4>👨‍💼 YÖNETİM</h4>
+                        <p>• Toplam enerji maliyeti<br>
+                        • Operasyon bazlı tüketim<br>
+                        • Vinç performansı<br>
+                        • GES katkısı<br>
+                        • CO₂e göstergeleri<br>
+                        • Tasarruf potansiyeli</p>
+                    </div>
+                    <div class="card">
+                        <h4>⚡ ENERJİ YÖNETİMİ</h4>
+                        <p>• Günlük/aylık tüketim<br>
+                        • Peak demand<br>
+                        • Enerji kalitesi<br>
+                        • Kayıp analizi<br>
+                        • Tüketim trendleri</p>
+                    </div>
+                </div>
 
-            <div class="grid-2">
                 <div class="card">
-                    <h4>👨‍💼 YÖNETİM</h4>
-                    <p>• Toplam enerji maliyeti<br>
-                    • Operasyon bazlı tüketim<br>
-                    • Vinç performansı<br>
-                    • GES katkısı<br>
-                    • CO₂e göstergeleri<br>
-                    • Tasarruf potansiyeli</p>
+                    <h4>👷 OPERASYON</h4>
+                    <p>• Anlık tesis yükü • OG durumu • Jeneratör durumu • Kritik alarmlar • UPS durumları</p>
                 </div>
-                <div class="card">
-                    <h4>⚡ ENERJİ YÖNETİMİ</h4>
-                    <p>• Günlük/aylık tüketim<br>
-                    • Peak demand<br>
-                    • Enerji kalitesi<br>
-                    • Kayıp analizi<br>
-                    • Tüketim trendleri</p>
+
+                <div class="highlight" style="margin-top: 20px;">
+                    <p><strong>→ Aynı veri, farklı perspektifler</strong></p>
                 </div>
             </div>
 
-            <div class="card">
-                <h4>👷 OPERASYON</h4>
-                <p>• Anlık tesis yükü • OG durumu • Jeneratör durumu • Kritik alarmlar • UPS durumları</p>
-            </div>
+            <!-- SLAYT 16 - ERKEN UYARI -->
+            <div class="slide" id="slide-16">
+                <h2>⚠️ ERKEN UYARI VE ANOMALI TESPİTİ</h2>
 
-            <div class="highlight" style="margin-top: 20px;">
-                <p><strong>→ Aynı veri, farklı perspektifler</strong></p>
-            </div>
-        </div>
+                <h3>Gelişmiş Özellikler (İlerleyen Aşamalar)</h3>
 
-        <!-- SLAYT 16 - ERKEN UYARI -->
-        <div class="slide" id="slide-16">
-            <h2>⚠️ ERKEN UYARI VE ANOMALI TESPİTİ</h2>
+                <h3>Örnek Senaryo:</h3>
 
-            <h3>Gelişmiş Özellikler (İlerleyen Aşamalar)</h3>
-
-            <h3>Örnek Senaryo:</h3>
-
-            <div class="box box-yellow">
-                <h4>📊 Normal Operasyon:</h4>
-                <p style="margin: 0;"><strong>Vinç-03:</strong> 80-100 kWh/saat</p>
-            </div>
-
-            <div class="box box-red" style="margin: 20px 0;">
-                <h4>⚠️ Anormal Durum Tespit:</h4>
-                <p style="margin: 0;"><strong>Vinç-03:</strong> 135 kWh/saat (UYARI!)</p>
-                <p style="margin-top: 10px; font-size: 0.95em;">Ekiparda sorun mu? Verimsiz operasyon mu? Bakım gerekli mi?</p>
-            </div>
-
-            <div class="box box-green">
-                <h4>🤖 Sistem İşlemi:</h4>
-                <p>✓ Geçmiş verileri analiz eder<br>
-                ✓ Anormal tüketimi otomatik tespit eder<br>
-                ✓ İlgili ekibi uyarır<br>
-                ✓ Proaktif bakıma geçiş</p>
-            </div>
-
-            <div class="highlight">
-                <p><strong>💰 Sonuç:</strong> Sorun çıkmadan çözülür = Arıza maliyeti azalır</p>
-            </div>
-        </div>
-
-        <!-- SLAYT 17 - BEKLENEN SONUÇLAR -->
-        <div class="slide" id="slide-17">
-            <h2>🎯 BEKLENEN SONUÇLAR VE İMPACT</h2>
-
-            <h3>İlk 12 Ayda Beklediğimiz Kazanımlar:</h3>
-
-            <div class="grid-2">
-                <div class="card">
-                    <h4>💡 FARKINDALIIK</h4>
-                    <p>✓ Enerji altyapısının %100 görünürlüğü<br>
-                    ✓ Tüketimin nerede olduğu<br>
-                    ✓ Kayıplar ve verimsizlikler</p>
+                <div class="box box-yellow">
+                    <h4>📊 Normal Operasyon:</h4>
+                    <p style="margin: 0;"><strong>Vinç-03:</strong> 80-100 kWh/saat</p>
                 </div>
-                <div class="card">
-                    <h4>💰 MALİYET TASARRUFU</h4>
-                    <p>✓ Enerji kayıpları %2-5 azalma<br>
-                    ✓ Pik yük yönetimi<br>
-                    ✓ Verimsiz ekipmanlar</p>
+
+                <div class="box box-red" style="margin: 20px 0;">
+                    <h4>⚠️ Anormal Durum Tespit:</h4>
+                    <p style="margin: 0;"><strong>Vinç-03:</strong> 135 kWh/saat (UYARI!)</p>
+                    <p style="margin-top: 10px; font-size: 1em;">Ekiparda sorun mu? Verimsiz operasyon mu? Bakım gerekli mi?</p>
                 </div>
-                <div class="card">
-                    <h4>🔧 OPERASYONEL İYİLEŞTİRME</h4>
-                    <p>✓ Veriye dayalı bakım<br>
-                    ✓ Arız tespit süresi<br>
-                    ✓ Ölçülebilir iyileştirmeler</p>
+
+                <div class="box box-green">
+                    <h4>🤖 Sistem İşlemi:</h4>
+                    <p>✓ Geçmiş verileri analiz eder<br>
+                    ✓ Anormal tüketimi otomatik tespit eder<br>
+                    ✓ İlgili ekibi uyarır<br>
+                    ✓ Proaktif bakıma geçiş</p>
                 </div>
-                <div class="card">
-                    <h4>🌱 GELECEĞİ HAZIRLAMA</h4>
-                    <p>✓ Ölçeklenebilir altyapı<br>
-                    ✓ Enerji yatırımları<br>
-                    ✓ Sürdürülebilirlik hedefleri</p>
+
+                <div class="highlight">
+                    <p><strong>💰 Sonuç:</strong> Sorun çıkmadan çözülür = Arıza maliyeti azalır</p>
                 </div>
             </div>
-        </div>
 
-        <!-- SLAYT 18 - SONRAKI ADIMLAR -->
-        <div class="slide" id="slide-18">
-            <h2>📅 SONRAKI ADIMLAR</h2>
+            <!-- SLAYT 17 - BEKLENEN SONUÇLAR -->
+            <div class="slide" id="slide-17">
+                <h2>🎯 BEKLENEN SONUÇLAR VE İMPACT</h2>
 
-            <h3>Bugünden Sonra Neler Olacak?</h3>
+                <h3>İlk 12 Ayda Beklediğimiz Kazanımlar:</h3>
 
-            <div class="box" style="background: #e3f2fd; border-left-color: #2196f3;">
-                <h4>📅 İlk 2 Hafta:</h4>
-                <p>✓ Mevcut altyapı detaylı incelemesi<br>
-                ✓ Ölçüm noktaları belirlenmesi<br>
-                ✓ Haberleşme altyapısı testi</p>
+                <div class="grid-2">
+                    <div class="card">
+                        <h4>💡 FARKINDALIIK</h4>
+                        <p>✓ Enerji altyapısının %100 görünürlüğü<br>
+                        ✓ Tüketimin nerede olduğu<br>
+                        ✓ Kayıplar ve verimsizlikler</p>
+                    </div>
+                    <div class="card">
+                        <h4>💰 MALİYET TASARRUFU</h4>
+                        <p>✓ Enerji kayıpları %2-5 azalma<br>
+                        ✓ Pik yük yönetimi<br>
+                        ✓ Verimsiz ekipmanlar</p>
+                    </div>
+                    <div class="card">
+                        <h4>🔧 OPERASYONEL İYİLEŞTİRME</h4>
+                        <p>✓ Veriye dayalı bakım<br>
+                        ✓ Arız tespit süresi<br>
+                        ✓ Ölçülebilir iyileştirmeler</p>
+                    </div>
+                    <div class="card">
+                        <h4>🌱 GELECEĞİ HAZIRLAMA</h4>
+                        <p>✓ Ölçeklenebilir altyapı<br>
+                        ✓ Enerji yatırımları<br>
+                        ✓ Sürdürülebilirlik hedefleri</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="box" style="background: #f3e5f5; border-left-color: #9c27b0;">
-                <h4>📅 Hafta 3-4:</h4>
-                <p>✓ Sistem tasarım detaylaştırması<br>
-                ✓ Donanım listesi ve fiyat teklifi<br>
-                ✓ Kurulum planı</p>
-            </div>
+            <!-- SLAYT 18 - SONRAKI ADIMLAR -->
+            <div class="slide" id="slide-18">
+                <h2>📅 SONRAKI ADIMLAR</h2>
 
-            <div class="box" style="background: #e8f5e9; border-left-color: #4caf50;">
-                <h4>📅 Ay 2-3:</h4>
-                <p>✓ Donanım ve yazılım temini<br>
-                ✓ Sistem kurulumu<br>
-                ✓ Test ve kalibrasyonu</p>
-            </div>
+                <h3>Bugünden Sonra Neler Olacak?</h3>
 
-            <div class="box" style="background: #fff3e0; border-left-color: #ff9800;">
-                <h4>📅 Ay 4:</h4>
-                <p>✓ Canlıya geçiş<br>
-                ✓ Operatör eğitimi<br>
-                ✓ İzleme ve destek</p>
-            </div>
+                <div class="box" style="background: #e3f2fd; border-left-color: #2196f3;">
+                    <h4>📅 İlk 2 Hafta:</h4>
+                    <p>✓ Mevcut altyapı detaylı incelemesi<br>
+                    ✓ Ölçüm noktaları belirlenmesi<br>
+                    ✓ Haberleşme altyapısı testi</p>
+                </div>
 
-            <div style="text-align: center; margin-top: 30px;">
-                <p style="font-size: 1.3em; color: #667eea;"><strong>💬 SORULAR?</strong></p>
+                <div class="box" style="background: #f3e5f5; border-left-color: #9c27b0;">
+                    <h4>📅 Hafta 3-4:</h4>
+                    <p>✓ Sistem tasarım detaylaştırması<br>
+                    ✓ Donanım listesi ve fiyat teklifi<br>
+                    ✓ Kurulum planı</p>
+                </div>
+
+                <div class="box" style="background: #e8f5e9; border-left-color: #4caf50;">
+                    <h4>📅 Ay 2-3:</h4>
+                    <p>✓ Donanım ve yazılım temini<br>
+                    ✓ Sistem kurulumu<br>
+                    ✓ Test ve kalibrasyonu</p>
+                </div>
+
+                <div class="box" style="background: #fff3e0; border-left-color: #ff9800;">
+                    <h4>📅 Ay 4:</h4>
+                    <p>✓ Canlıya geçiş<br>
+                    ✓ Operatör eğitimi<br>
+                    ✓ İzleme ve destek</p>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <p style="font-size: 1.4em; color: #667eea;"><strong>💬 SORULAR?</strong></p>
+                </div>
             </div>
         </div>
 
@@ -770,7 +800,7 @@ KAYNAKLAR              DAĞITIM                TÜKETİCİLER
         </div>
     </div>
 
-    <div class="keyboard-hint">⌨️ Ok tuşları ile gezinin | Space ile ilerleyin</div>
+    <div class="keyboard-hint">⌨️ Ok tuşları veya Space ile gezinin</div>
 
     <script>
         let currentSlide = 1;
