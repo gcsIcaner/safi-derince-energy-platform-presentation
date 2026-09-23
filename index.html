@@ -1,238 +1,29 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAFİ Derince | Güvenli ve Kesintisiz Liman Enerjisi</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { width: 100%; height: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #07111f; overflow: hidden; }
-        body { display: flex; justify-content: center; align-items: center; }
-        .presentation-container { width: 100%; height: 100%; display: flex; flex-direction: column; background: #fff; }
-        .slides-wrapper { flex: 1; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-        .slide { display: none; width: 100%; height: 100%; padding: 48px 86px; background: linear-gradient(135deg, #f4f7fb 0%, #dce7f2 100%); overflow-y: auto; animation: fadeIn .35s ease-in; }
-        .slide.active { display: flex; flex-direction: column; justify-content: center; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .slide-kapak { background: linear-gradient(135deg, #07111f 0%, #123c5a 55%, #087f8c 100%); color: #fff; text-align: center; justify-content: center !important; }
-        .slide-kapak h1 { font-size: 3.35em; line-height: 1.15; margin-bottom: 18px; }
-        .slide-kapak .subtitle { font-size: 1.75em; margin-bottom: 18px; opacity: .92; }
-        .slide-kapak .detail { margin-top: 30px; font-size: 1.05em; opacity: .78; }
-        .security-banner { display: inline-block; margin: 25px auto 10px; padding: 16px 28px; border: 2px solid #55e6d0; border-radius: 12px; color: #d8fffa; font-size: 1.35em; font-weight: 700; }
-        .slide h2 { font-size: 2.55em; color: #087f8c; margin-bottom: 24px; border-bottom: 4px solid #087f8c; padding-bottom: 12px; }
-        .slide h3 { font-size: 1.45em; color: #123c5a; margin: 14px 0 10px; }
-        .slide h4 { font-size: 1.15em; margin-bottom: 8px; color: #123c5a; }
-        .slide p, .slide li { font-size: 1.08em; line-height: 1.55; color: #263746; margin-bottom: 8px; }
-        .slide ul { margin-left: 30px; }
-        .box, .card { background: #fff; border-radius: 11px; margin: 10px 0; padding: 18px 22px; box-shadow: 0 5px 18px rgba(7, 17, 31, .08); border-left: 5px solid #087f8c; }
-        .box-red { border-left-color: #d64545; background: #fff7f7; }
-        .box-green { border-left-color: #16835b; background: #f2fbf6; }
-        .box-yellow { border-left-color: #e2a500; background: #fffaf0; }
-        .box-blue { border-left-color: #2463a8; background: #f1f7ff; }
-        .highlight { background: #fff4ca; border-left: 6px solid #e2a500; padding: 18px 22px; border-radius: 8px; margin: 12px 0; }
-        .hero-message { background: #123c5a; color: #fff; border: none; text-align: center; padding: 24px; border-radius: 14px; margin: 12px 0 20px; }
-        .hero-message p { color: #fff; font-size: 1.35em; margin: 0; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 12px 0; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 12px 0; }
-        .card h4 { color: #087f8c; }
-        .card p { font-size: 1em; margin: 0; }
-        .icon { font-size: 2em; margin-bottom: 6px; }
-        .flow { display: flex; align-items: stretch; gap: 10px; margin: 18px 0; }
-        .flow > div { flex: 1; text-align: center; padding: 16px 10px; background: #fff; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,.08); }
-        .flow .arrow { flex: 0 0 auto; display: flex; align-items: center; background: transparent; box-shadow: none; color: #087f8c; font-size: 2em; padding: 0; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 16px 45px; background: #f5f7fa; border-top: 1px solid #d8e0e7; height: 72px; }
-        button { background: #087f8c; color: #fff; border: none; padding: 11px 28px; border-radius: 24px; font-size: 1em; cursor: pointer; font-weight: 600; }
-        button:hover { background: #123c5a; }
-        button:disabled { background: #bdc6ce; cursor: not-allowed; }
-        .slide-counter { font-size: 1.1em; color: #52616d; font-weight: bold; }
-        .slide-title-counter { color: #087f8c; font-size: 1.35em; }
-        .keyboard-hint { position: fixed; bottom: 18px; right: 25px; font-size: .82em; color: #71808c; background: rgba(255,255,255,.94); padding: 9px 13px; border-radius: 5px; pointer-events: none; }
-        @media (max-width: 1100px) { .slide { padding: 35px 50px; } .slide-kapak h1 { font-size: 2.6em; } .flow { flex-wrap: wrap; } .flow .arrow { display: none; } }
-    </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAFİ Derince | Güvenli ve Kesintisiz Liman Operasyonu</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html,body{width:100%;height:100%;font-family:'Segoe UI',Arial,sans-serif;background:#071a2b;overflow:hidden;color:#193247}.presentation{height:100%;display:flex;flex-direction:column;background:#fff}.slides{flex:1;overflow:hidden}.slide{display:none;width:100%;height:100%;padding:46px 82px;overflow-y:auto;background:linear-gradient(135deg,#f7fbff,#e7f0f8);animation:fade .3s}.slide.active{display:flex;flex-direction:column;justify-content:center}@keyframes fade{from{opacity:0}to{opacity:1}}
+.cover{background:linear-gradient(135deg,#061a2b 0%,#073c70 58%,#0068cf 100%);color:#fff;text-align:center;justify-content:center!important}.cover h1{font-size:3.25em;line-height:1.15;margin-bottom:18px}.cover .sub{font-size:1.7em;margin:8px 0;color:#eef8ff}.cover .line{height:6px;width:180px;background:#3dcd58;margin:28px auto;border-radius:5px}.cover .badge{display:inline-block;border:2px solid #3dcd58;border-radius:12px;padding:14px 28px;font-size:1.35em;font-weight:700;margin:12px auto;color:#fff}.cover .detail{margin-top:26px;opacity:.8}
+h2{font-size:2.5em;color:#0068cf;border-bottom:4px solid #0068cf;padding-bottom:12px;margin-bottom:24px}h3{font-size:1.45em;color:#073c70;margin:15px 0 10px}h4{font-size:1.12em;color:#073c70;margin-bottom:8px}p,li{font-size:1.08em;line-height:1.55;margin-bottom:8px}ul{margin-left:28px}.hero{background:#073c70;color:white;border-radius:13px;padding:24px;text-align:center;margin:10px 0 20px;box-shadow:0 6px 18px #073c7030}.hero p{color:white;font-size:1.3em;margin:0}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin:12px 0}.card,.box{background:#fff;border-radius:11px;padding:18px 21px;margin:9px 0;box-shadow:0 5px 17px #19324715;border-left:5px solid #0068cf}.card p,.box p{font-size:1em}.green{border-left-color:#3dcd58;background:#f2fcf3}.warn{border-left-color:#e2a500;background:#fffaf0}.risk{border-left-color:#d64545;background:#fff7f7}.lightblue{border-left-color:#0068cf;background:#edf6ff}.icon{font-size:2em;margin-bottom:5px}.tag{display:inline-block;padding:6px 12px;border-radius:20px;background:#eaf4ff;color:#0068cf;font-weight:700;margin:4px}.quote{font-size:1.25em!important;font-weight:700}.flow{display:flex;align-items:stretch;gap:10px;margin:18px 0}.flow>div{flex:1;text-align:center;background:#fff;border-radius:11px;padding:15px 10px;box-shadow:0 4px 15px #19324715}.flow .arrow{flex:0 0 auto;background:transparent;box-shadow:none;color:#0068cf;font-size:2em;display:flex;align-items:center;padding:0}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;padding:15px 45px;background:#f4f7fa;border-top:1px solid #dbe4ec}button{border:0;border-radius:24px;background:#0068cf;color:#fff;padding:11px 28px;font-size:1em;font-weight:700;cursor:pointer}button:hover{background:#073c70}button:disabled{background:#b8c4ce;cursor:not-allowed}.counter{font-weight:700;color:#52616d}.counter b{font-size:1.35em;color:#0068cf}.hint{position:fixed;right:22px;bottom:17px;padding:8px 12px;background:#fff;color:#71808c;border-radius:5px;font-size:.8em;pointer-events:none}@media(max-width:1100px){.slide{padding:32px 48px}.cover h1{font-size:2.5em}.flow{flex-wrap:wrap}.flow .arrow{display:none}}
+</style>
 </head>
-<body>
-<div class="presentation-container">
-<div class="slides-wrapper">
-    <!-- 1 -->
-    <div class="slide slide-kapak active">
-        <h1>🛡️ GÜVENLİ VE KESİNTİSİZ LİMAN ENERJİSİ</h1>
-        <p class="subtitle">SAFİ Derince Uluslararası Limanı</p>
-        <p class="subtitle">Enerji Altyapısı İzleme ve Yönetim Platformu</p>
-        <div class="security-banner">Güvenlik + Süreklilik = Operasyonun Durmaması</div>
-        <div class="detail"><p>📅 Tarih: 08.09.2026</p><p>👤 Hazırlayan: Caner ÇELEBİ - GCS Yazılım</p></div>
-    </div>
-
-    <!-- 2 -->
-    <div class="slide">
-        <h2>🎯 YATIRIMIN EN ÖNEMLİ GEREKÇESİ</h2>
-        <div class="hero-message"><p>Bu platform öncelikle enerji tasarrufu için değil;<br><strong>can güvenliği, ekipman güvenliği ve liman operasyonlarının kesintisiz devamı için gereklidir.</strong></p></div>
-        <div class="grid-3">
-            <div class="card"><div class="icon">🛡️</div><h4>GÜVENLİK</h4><p>Elektriksel riskleri, anormal durumları ve kritik alarmları erken görmek.</p></div>
-            <div class="card"><div class="icon">⚡</div><h4>SÜREKLİLİK</h4><p>Elektrik arızası ve güç kalitesi sorunları nedeniyle operasyonun durmasını önlemek.</p></div>
-            <div class="card"><div class="icon">🚢</div><h4>OPERASYON</h4><p>Terminal ekipmanlarının güvenli ve kesintisiz çalışmasını desteklemek.</p></div>
-        </div>
-    </div>
-
-    <!-- 3 -->
-    <div class="slide">
-        <h2>⚠️ BUGÜNÜN KRİTİK RİSKİ: GÖRÜNMEYEN ELEKTRİKSEL OLAYLAR</h2>
-        <p>Limandaki elektrik altyapısı çok sayıda kritik ekipmanı aynı anda besliyor. Sorun yaşandığında yalnızca elektrik kesilmez; saha güvenliği ve elleçleme operasyonu da etkilenir.</p>
-        <div class="grid-2">
-            <div class="box box-red"><h4>⚠️ Elektriksel güvenlik riski</h4><p>OG/AG dağıtım, kesiciler, trafolar ve jeneratörlerdeki anormal durumların geç fark edilmesi.</p></div>
-            <div class="box box-red"><h4>⏱️ Plansız duruş riski</h4><p>Bir arızanın vinçleri, terminal traktörlerini, aydınlatmayı veya yardımcı tesisleri durdurması.</p></div>
-            <div class="box box-yellow"><h4>📉 Darbe ve güç kalitesi</h4><p>Gerilim dalgalanmaları, harmonikler, ani olaylar ve güç kalitesi bozulmalarının ekipmanları zorlaması.</p></div>
-            <div class="box box-yellow"><h4>🔍 Sınırlı teşhis</h4><p>Olayın ne zaman, nerede ve hangi ekipmanda başladığının kayıt altında olmaması.</p></div>
-        </div>
-    </div>
-
-    <!-- 4 -->
-    <div class="slide">
-        <h2>📈 GÜÇ KALİTESİ KAYDEDİCİ: SORUNU OLMADAN ÖNCE GÖRMEK</h2>
-        <div class="hero-message"><p>Limanda çok sayıda elektriksel darbe meydana geliyor.<br><strong>Güç kalitesi kaydedici, bu olayları ölçer, zaman damgasıyla kaydeder ve kök neden analizini mümkün kılar.</strong></p></div>
-        <div class="grid-2">
-            <div class="card"><h4>📊 Sürekli ölçüm</h4><p>Gerilim, akım, frekans, harmonikler, dengesizlik ve güç kalitesi göstergeleri.</p></div>
-            <div class="card"><h4>⚡ Olay kaydı</h4><p>Gerilim çökmesi/yükselmesi, kesinti, darbe ve geçici rejimleri kayıt altına alma.</p></div>
-            <div class="card"><h4>🔎 Kök neden</h4><p>Arızanın kaynağını ve etkilediği ekipmanı geçmiş verilerle karşılaştırma.</p></div>
-            <div class="card"><h4>🛡️ Koruyucu aksiyon</h4><p>Ekipman hasarını, tekrarlayan arızaları ve güvenlik risklerini azaltacak erken uyarı.</p></div>
-        </div>
-    </div>
-
-    <!-- 5 -->
-    <div class="slide">
-        <h2>✅ ÇÖZÜMÜN ODAĞI: GÜVENLİK VE KESİNTİSİZLİK</h2>
-        <div class="flow">
-            <div><div class="icon">📡</div><h4>ÖLÇ</h4><p>Kritik noktalardan gerçek zamanlı veri</p></div><div class="arrow">→</div>
-            <div><div class="icon">⚠️</div><h4>TESPİT ET</h4><p>Anomali, darbe ve alarmı yakala</p></div><div class="arrow">→</div>
-            <div><div class="icon">👷</div><h4>UYAR</h4><p>Doğru ekibe doğru zamanda bildir</p></div><div class="arrow">→</div>
-            <div><div class="icon">🛠️</div><h4>MÜDAHALE ET</h4><p>Arızayı büyümeden yönet</p></div><div class="arrow">→</div>
-            <div><div class="icon">🔄</div><h4>DEVAM ET</h4><p>Operasyonun sürekliliğini koru</p></div>
-        </div>
-        <div class="highlight"><p><strong>Sonuç:</strong> Elektrik altyapısı yalnızca izlenmez; güvenli ve sürekli işletme için yönetilir.</p></div>
-    </div>
-
-    <!-- 6 -->
-    <div class="slide">
-        <h2>💻 TEK PLATFORMDA MERKEZİ GÖRÜNÜRLÜK</h2>
-        <div class="grid-2">
-            <div class="box box-blue"><h4>Power Operation SCADA</h4><p>Gerçek zamanlı izleme, kesici/trafo/jeneratör durumları, alarmlar ve operasyonel kontrol ekranları.</p></div>
-            <div class="box box-blue"><h4>Power Monitoring Expert</h4><p>Enerji trendleri, güç kalitesi, olay kayıtları, tarihçeli raporlar ve yönetim dashboard'ları.</p></div>
-        </div>
-        <div class="box box-green"><h4>📚 Kayıt ve izlenebilirlik</h4><p>Her alarm ve elektriksel olay zaman damgasıyla arşivlenir. Böylece “ne oldu, nerede oldu, ne zaman oldu?” soruları veriye dayalı cevaplanır.</p></div>
-        <div class="box"><h4>🔐 Yetkili ve kontrollü erişim</h4><p>Operasyon, enerji yönetimi, bakım ve yönetim ekipleri ihtiyaçlarına uygun görünümü kullanır.</p></div>
-    </div>
-
-    <!-- 7 -->
-    <div class="slide">
-        <h2>🔌 ELEKTRİK SORUNU LİMANI DURDURMAMALI</h2>
-        <h3>Sistem sürekliliğe nasıl katkı sağlar?</h3>
-        <div class="grid-2">
-            <div class="card"><h4>1️⃣ Erken uyarı</h4><p>Kesinti veya ekipman arızası yaşanmadan önce kritik değişimler fark edilir.</p></div>
-            <div class="card"><h4>2️⃣ Hızlı teşhis</h4><p>Olay kaydı ve alarm geçmişi ile arıza arama süresi kısalır.</p></div>
-            <div class="card"><h4>3️⃣ Kontrollü müdahale</h4><p>Enerji ekibi doğru noktaya, doğru bilgiyle müdahale eder.</p></div>
-            <div class="card"><h4>4️⃣ Tekrarlamayı önleme</h4><p>Geçmiş darbeler ve güç kalitesi verileri bakım ve yatırım kararlarına temel olur.</p></div>
-        </div>
-        <div class="hero-message"><p><strong>Amaç: Arızayı beklemek değil, arızaya dönüşmeden yönetmek.</strong></p></div>
-    </div>
-
-    <!-- 8 -->
-    <div class="slide">
-        <h2>🏗️ SAHADA İZLENECEK KRİTİK SİSTEMLER</h2>
-        <div class="grid-3">
-            <div class="card"><div class="icon">🏭</div><h4>OG / AG DAĞITIM</h4><p>Koruma röleleri, Sepam cihazları, kesiciler ve AG panoları</p></div>
-            <div class="card"><div class="icon">🔧</div><h4>TRAFO VE JENERATÖR</h4><p>Dağıtım trafoları, jeneratörler ve yedek enerji durumu</p></div>
-            <div class="card"><div class="icon">📊</div><h4>ENERJİ ANALİZÖRLERİ</h4><p>Tüketim, yük, güç kalitesi ve olay kayıtları</p></div>
-            <div class="card"><div class="icon">🔋</div><h4>UPS SİSTEMLERİ</h4><p>Kritik yüklerin sürekliliği ve yedekleme durumu</p></div>
-            <div class="card"><div class="icon">🏗️</div><h4>VİNÇLER</h4><p>Operasyon yükü, çalışma durumu ve enerji davranışı</p></div>
-            <div class="card"><div class="icon">💡</div><h4>AYDINLATMA</h4><p>Saha güvenliği ve operasyonel görünürlük için süreklilik</p></div>
-        </div>
-    </div>
-
-    <!-- 9 -->
-    <div class="slide">
-        <h2>🚛 TERMİNAL TRAKTÖRLERİ: KONTEYNER OPERASYONUNUN SÜREKLİLİĞİ</h2>
-        <div class="hero-message"><p>Buradaki ekipman “elektrikli forklift” değil;<br><strong>terminal içinde konteyner taşıyan elektrikli terminal traktörleridir.</strong></p></div>
-        <div class="grid-2">
-            <div class="box"><h4>📦 Operasyondaki rolü</h4><p>Konteynerlerin terminal sahasında güvenli ve kesintisiz taşınmasını sağlar.</p></div>
-            <div class="box"><h4>⚡ Enerji açısından önemi</h4><p>Şarj altyapısı, yük profili ve çalışma sürekliliği izlenmelidir.</p></div>
-            <div class="box box-green"><h4>🛡️ Güvenli işletme</h4><p>Enerji ve ekipman durumunun izlenmesi, beklenmeyen duruş ve saha risklerini azaltır.</p></div>
-            <div class="box box-green"><h4>⏱️ Kesintisiz taşıma</h4><p>Terminal traktörlerinin çalışmaması konteyner operasyonunun yavaşlamasına neden olabilir; erken uyarı sürekliliği destekler.</p></div>
-        </div>
-    </div>
-
-    <!-- 10 -->
-    <div class="slide">
-        <h2>🚀 İLK AŞAMA: KURU YÜK TESİSİNDE GÜVENLİ VE SÜREKLİ İŞLETME</h2>
-        <h3>Öncelikli hedef</h3>
-        <p>Kuru yük tesisinin elektrik altyapısını tek merkezden izlemek, güç kalitesini kaydetmek ve kritik olaylara hızlı müdahale edebilmek.</p>
-        <div class="grid-2">
-            <div class="box"><h4>📡 İzlenecek noktalar</h4><p>OG koruma röleleri ve Sepam cihazları<br>Enerji analizörleri ve AG dağıtım<br>Jeneratörler, GES ve trafolar<br>UPS ve haberleşebilen cihazlar</p></div>
-            <div class="box box-green"><h4>✅ İlk aşama çıktıları</h4><p>Merkezi SCADA ekranı<br>Güç kalitesi kaydı ve alarm yönetimi<br>Tarihçeli veri tabanı<br>Olay ve süreklilik raporları</p></div>
-        </div>
-    </div>
-
-    <!-- 11 -->
-    <div class="slide">
-        <h2>📊 YÖNETİMİN GÖRECEĞİ KRİTİK GÖSTERGELER</h2>
-        <div class="grid-2">
-            <div class="card"><h4>🛡️ Güvenlik</h4><p>Aktif alarmlar, koruma rölesi durumu, kritik ekipman uyarıları ve olay sayısı</p></div>
-            <div class="card"><h4>⚡ Süreklilik</h4><p>Kesinti süresi, plansız duruş, jeneratör/UPS hazır olma durumu ve müdahale süresi</p></div>
-            <div class="card"><h4>📈 Güç kalitesi</h4><p>Gerilim olayları, harmonikler, darbe kayıtları, frekans ve faz dengesizliği</p></div>
-            <div class="card"><h4>🏗️ Operasyon</h4><p>Vinç ve terminal traktörü çalışma durumu, enerji kullanımı ve operasyon etkisi</p></div>
-        </div>
-        <div class="highlight"><p><strong>Yönetim mesajı:</strong> “Ne kadar enerji harcadık?” kadar, “Elektrik altyapımız güvenli mi ve operasyon durdu mu?” soruları da anlık cevaplanır.</p></div>
-    </div>
-
-    <!-- 12 -->
-    <div class="slide">
-        <h2>🧭 KADEMELİ YOL HARİTASI</h2>
-        <div class="box box-blue"><h4>FAZ 1 — İZLE VE KAYDET</h4><p>OG/AG, röleler, trafolar, jeneratörler, enerji analizörleri ve güç kalitesi kaydı.</p></div>
-        <div class="box box-yellow"><h4>FAZ 2 — GÜVENLİĞİ DERİNLEŞTİR</h4><p>UPS, vinçler, terminal traktörleri, aydınlatma ve kritik yardımcı tesislerde detaylı ölçüm.</p></div>
-        <div class="box box-green"><h4>FAZ 3 — ANALİZ ET VE ÖNLEM AL</h4><p>Anomali tespiti, bakım önceliklendirme, olay korelasyonu ve süreklilik KPI'ları.</p></div>
-        <div class="box"><h4>FAZ 4 — OPTİMİZE ET</h4><p>Aktif enerji yönetimi, yatırım planlaması, performans iyileştirme ve sürdürülebilirlik.</p></div>
-    </div>
-
-    <!-- 13 -->
-    <div class="slide">
-        <h2>🏆 SAFİ DERİNCE'YE KATKI</h2>
-        <div class="hero-message"><p><strong>Güvenli bir enerji altyapısı ve durmayan bir liman operasyonu.</strong></p></div>
-        <div class="grid-2">
-            <div class="box box-green"><h4>🛡️ Güvenlik katkısı</h4><p>Elektriksel tehlikelerin, anormal durumların ve kritik olayların erken fark edilmesi.</p></div>
-            <div class="box box-green"><h4>🔄 Süreklilik katkısı</h4><p>Kesinti ve arıza etkisinin azaltılması; operasyonun daha hızlı normale dönmesi.</p></div>
-            <div class="box"><h4>🔎 Şeffaflık</h4><p>Tek merkezden canlı görünürlük, kayıt ve izlenebilirlik.</p></div>
-            <div class="box"><h4>📚 Doğru karar</h4><p>Bakım ve yatırım kararlarının tahminle değil, ölçülmüş verilerle alınması.</p></div>
-        </div>
-    </div>
-
-    <!-- 14 -->
-    <div class="slide">
-        <h2>📅 SONRAKİ ADIMLAR</h2>
-        <div class="box box-blue"><h4>İlk 2 hafta</h4><p>Mevcut altyapı ve kritik yüklerin incelenmesi; ölçüm noktaları, güç kalitesi ve haberleşme ihtiyaçlarının belirlenmesi.</p></div>
-        <div class="box"><h4>Hafta 3–4</h4><p>Sistem tasarımı, donanım listesi, alarm senaryoları ve kurulum planının hazırlanması.</p></div>
-        <div class="box box-green"><h4>Ay 2–3</h4><p>Donanım/yazılım kurulumu, güç kalitesi kaydedicilerin devreye alınması, test ve kalibrasyon.</p></div>
-        <div class="box box-yellow"><h4>Ay 4</h4><p>Canlıya geçiş, operatör ve bakım ekiplerinin eğitimi, izleme ve sürekli iyileştirme.</p></div>
-        <div class="hero-message"><p>🎯 <strong>Hedef: Güvenli enerji altyapısı, kesintisiz terminal operasyonu.</strong></p></div>
-    </div>
-</div>
-<div class="nav-container"><button id="prev-btn" onclick="prevSlide()">← Önceki</button><span class="slide-counter"><span class="slide-title-counter" id="current-slide">1</span> / <span id="total-slides">14</span></span><button id="next-btn" onclick="nextSlide()">Sonraki →</button></div>
-</div>
-<div class="keyboard-hint">⌨️ Ok tuşları veya Space ile gezinin</div>
-<script>
-    let currentSlide = 1;
-    const totalSlides = 14;
-    function showSlide(n) {
-        currentSlide = Math.max(1, Math.min(n, totalSlides));
-        document.querySelectorAll('.slide').forEach(slide => slide.classList.remove('active'));
-        document.querySelectorAll('.slide')[currentSlide - 1].classList.add('active');
-        document.getElementById('current-slide').textContent = currentSlide;
-        document.getElementById('prev-btn').disabled = currentSlide === 1;
-        document.getElementById('next-btn').disabled = currentSlide === totalSlides;
-    }
-    function nextSlide() { showSlide(currentSlide + 1); }
-    function prevSlide() { showSlide(currentSlide - 1); }
-    document.addEventListener('keydown', event => {
-        if (event.key === 'ArrowRight' || event.key === ' ') { event.preventDefault(); nextSlide(); }
-        if (event.key === 'ArrowLeft') { event.preventDefault(); prevSlide(); }
-    });
-    showSlide(currentSlide);
-</script>
-</body>
-</html>
+<body><div class="presentation"><div class="slides">
+<!-- 1 --> <section class="slide cover active"><h1>🛡️ GÜVENLİ VE KESİNTİSİZ LİMAN OPERASYONU</h1><p class="sub">SAFİ Derince Uluslararası Limanı</p><p class="sub">Enerji Altyapısı İzleme ve Yönetim Platformu</p><div class="line"></div><div class="badge">Güvenlik + Süreklilik = Limanın Durmaması</div><div class="detail"><p>Teknik Teklif Sunusu | 08.09.2026</p><p>Caner ÇELEBİ — GCS Yazılım</p></div></section>
+<!-- 2 --> <section class="slide"><h2>🎯 YÖNETİCİ ÖZETİ: BU YATIRIM NEDEN GEREKLİ?</h2><div class="hero"><p>Bu projenin ana amacı yalnızca enerji tüketimini ölçmek değildir.<br><strong>Amaç; elektrik altyapısını güvenli yönetmek, arızaların etkisini azaltmak ve liman operasyonunun durmamasına katkı sağlamaktır.</strong></p></div><div class="grid3"><div class="card"><div class="icon">🛡️</div><h4>GÜVENLİK</h4><p>Elektriksel riskleri, kritik alarmları ve anormal durumları erken fark etmek.</p></div><div class="card"><div class="icon">🔄</div><h4>SÜREKLİLİK</h4><p>Plansız duruşların etkisini azaltmak ve hızlı müdahaleyi desteklemek.</p></div><div class="card"><div class="icon">📌</div><h4>YÖNETİLEBİLİRLİK</h4><p>Kararları tahmine değil, kayıtlı ve izlenebilir veriye dayandırmak.</p></div></div><div class="box green"><p class="quote">Yönetim açısından değer: Elektrik sorunu nedeniyle operasyonun durma riskini azaltan görünür ve yönetilebilir bir altyapı.</p></div></section>
+<!-- 3 --> <section class="slide"><h2>⚠️ LİMANDA ELEKTRİK SORUNU SADECE ELEKTRİK SORUNU DEĞİLDİR</h2><p>Enerji altyapısındaki bir arıza veya güç kalitesi problemi, doğrudan operasyonel ve finansal etkiye dönüşebilir.</p><div class="grid2"><div class="box risk"><h4>Operasyon duruşu</h4><p>Vinçler, terminal traktörleri, aydınlatma ve yardımcı tesisler etkilenebilir.</p></div><div class="box risk"><h4>Güvenlik riski</h4><p>Beklenmeyen kesinti ve ekipman arızaları saha güvenliğini zorlaştırabilir.</p></div><div class="box warn"><h4>Ekipman zorlanması</h4><p>Gerilim darbeleri, dalgalanmalar ve harmonikler ekipman ömrünü etkileyebilir.</p></div><div class="box warn"><h4>Geç teşhis</h4><p>Olayın nerede ve ne zaman başladığı bilinmezse müdahale uzar.</p></div></div><div class="hero"><p><strong>Yatırımın gerekçesi: Sorunu görmek değil, etkisini büyümeden yönetebilmek.</strong></p></div></section>
+<!-- 4 --> <section class="slide"><h2>📊 GÜÇ KALİTESİ KAYDEDİCİ: KRİTİK YATIRIM BİLEŞENİ</h2><div class="hero"><p>Limanda meydana gelen elektriksel darbeler ve güç kalitesi olayları sürekli ve zaman damgalı olarak kaydedilmelidir.</p></div><div class="grid2"><div class="card"><h4>⚡ Ne kaydedilir?</h4><p>Gerilim, akım, frekans, harmonikler, faz dengesizliği, çökme/yükselme ve geçici olaylar.</p></div><div class="card"><h4>🔎 Ne kazandırır?</h4><p>Arızanın zamanı, yeri, süresi ve etkilediği ekipman için kanıtlanabilir veri.</p></div><div class="card"><h4>🛠️ Teknik ekibe katkısı</h4><p>Arıza arama süresini kısaltır, tekrarlayan olayların kök neden analizini destekler.</p></div><div class="card"><h4>💼 Yönetime katkısı</h4><p>Plansız duruşların nedenini görünür kılar; bakım ve yatırım önceliklerini somutlaştırır.</p></div></div></section>
+<!-- 5 --> <section class="slide"><h2>💰 YÖNETİM İÇİN DEĞER: KAYBIN VE DURUŞUN MALİYETİNİ AZALTMAK</h2><div class="grid2"><div class="box green"><h4>✅ Daha erken fark edilen sorun</h4><p>Alarm ve trendler, kritik ekipmandaki değişimi arızaya dönüşmeden gösterebilir.</p></div><div class="box green"><h4>✅ Daha kısa müdahale süresi</h4><p>Olay kayıtları, ekiplerin doğru noktaya doğru bilgiyle yönelmesine yardımcı olur.</p></div><div class="box green"><h4>✅ Daha planlı bakım</h4><p>Bakım kararları gerçek çalışma ve güç kalitesi verileriyle önceliklendirilir.</p></div><div class="box green"><h4>✅ Daha kontrollü yatırım</h4><p>Hangi ekipmanın ve hangi tesis bölümünün gerçekten öncelikli olduğu ölçülür.</p></div></div><div class="box lightblue"><p><strong>Not:</strong> Tasarruf, projenin tek amacı değil; güvenli ve kesintisiz işletmenin doğal çıktısıdır.</p></div></section>
+<!-- 6 --> <section class="slide"><h2>🏗️ SİSTEMİN OPERASYONA KATKISI</h2><div class="grid3"><div class="card"><div class="icon">🏗️</div><h4>VİNÇLER</h4><p>Operasyon yükü, çalışma durumu ve enerji davranışı izlenir.</p></div><div class="card"><div class="icon">🚛</div><h4>TERMİNAL TRAKTÖRLERİ</h4><p>Elektrikli terminal traktörlerinin konteyner taşıma operasyonundaki sürekliliği desteklenir.</p></div><div class="card"><div class="icon">💡</div><h4>AYDINLATMA</h4><p>Saha güvenliği ve operasyonel görünürlük korunur.</p></div></div><div class="box green"><h4>📦 Terminal traktörü neden önemli?</h4><p>Buradaki araçlar forklift değil; terminal içinde konteyner taşıyan elektrikli terminal traktörleridir. Bu araçların enerji sürekliliği, konteyner akışının ve terminal operasyonunun devamı açısından kritiktir.</p></div></section>
+<!-- 7 --> <section class="slide"><h2>📡 ÇÖZÜM: ÖLÇ → KAYDET → UYAR → MÜDAHALE ET</h2><div class="flow"><div><div class="icon">📡</div><h4>ÖLÇ</h4><p>Kritik noktalardan gerçek zamanlı veri</p></div><div class="arrow">→</div><div><div class="icon">💾</div><h4>KAYDET</h4><p>Olayları ve güç kalitesini zaman damgasıyla arşivle</p></div><div class="arrow">→</div><div><div class="icon">⚠️</div><h4>UYAR</h4><p>Alarmı doğru ekibe ilet</p></div><div class="arrow">→</div><div><div class="icon">🛠️</div><h4>MÜDAHALE</h4><p>Arızayı büyümeden yönet</p></div></div><div class="box lightblue"><p><strong>Temel prensip:</strong> Elektrik altyapısı yalnızca izlenmez; tesisin güvenli ve kesintisiz işletilmesi için yönetilir.</p></div></section>
+<!-- 8 --> <section class="slide"><h2>💻 TEK PLATFORMDA MERKEZİ GÖRÜNÜRLÜK</h2><div class="grid2"><div class="box lightblue"><h4>Power Operation SCADA</h4><p>Gerçek zamanlı izleme, kesici/trafo/jeneratör durumları, kritik alarmlar ve operasyonel ekranlar.</p></div><div class="box lightblue"><h4>Power Monitoring Expert</h4><p>Enerji trendleri, güç kalitesi, olay kayıtları, tarihçeli raporlar ve dashboard'lar.</p></div></div><div class="grid2"><div class="card"><h4>👷 Teknik ekip</h4><p>Daha hızlı teşhis, alarm geçmişi ve kanıta dayalı bakım planı.</p></div><div class="card"><h4>👨‍💼 Yönetim</h4><p>Kesinti, risk, süreklilik ve yatırım önceliklerini tek görünümde takip.</p></div></div><div class="box green"><p><strong>Tek veri kaynağı:</strong> “Ne oldu, nerede oldu, ne zaman oldu ve operasyonu nasıl etkiledi?” sorularına ortak cevap.</p></div></section>
+<!-- 9 --> <section class="slide"><h2>🚀 İLK AŞAMA: KURU YÜK TESİSİ</h2><h3>Hedef</h3><p>Kuru yük tesisinin enerji altyapısını merkezi olarak izlemek, güç kalitesi olaylarını kaydetmek ve kritik durumlara hızlı müdahaleyi mümkün kılmak.</p><div class="grid2"><div class="box"><h4>İzlenecek altyapı</h4><p>OG koruma röleleri ve Sepam cihazları<br>Enerji analizörleri ve AG dağıtım<br>Jeneratörler, GES ve trafolar<br>UPS ve haberleşebilen kritik cihazlar</p></div><div class="box green"><h4>Beklenen çıktı</h4><p>Merkezi SCADA ekranı<br>Güç kalitesi ve olay kayıtları<br>Tarihçeli veri tabanı<br>Alarm, süreklilik ve olay raporları</p></div></div></section>
+<!-- 10 --> <section class="slide"><h2>🛡️ GÜVENLİK VE SÜREKLİLİK KPI'LARI</h2><div class="grid2"><div class="card"><h4>Güvenlik</h4><p>Aktif alarmlar, koruma rölesi durumu, kritik ekipman uyarıları ve olay yoğunluğu.</p></div><div class="card"><h4>Süreklilik</h4><p>Kesinti süresi, plansız duruş, jeneratör/UPS hazır olma durumu ve müdahale süresi.</p></div><div class="card"><h4>Güç kalitesi</h4><p>Gerilim olayları, harmonikler, darbeler, frekans ve faz dengesizliği.</p></div><div class="card"><h4>Operasyon</h4><p>Vinç ve terminal traktörü çalışma durumu, enerji kullanımı ve operasyon etkisi.</p></div></div><div class="hero"><p><strong>Başarı ölçütü yalnızca kWh değildir: Güvenli tesis, daha az sürpriz, daha az plansız duruş.</strong></p></div></section>
+<!-- 11 --> <section class="slide"><h2>🧭 KADEMELİ VE KONTROLLÜ UYGULAMA</h2><div class="box lightblue"><h4>FAZ 1 — İZLE VE KAYDET</h4><p>OG/AG, röleler, trafolar, jeneratörler, enerji analizörleri ve güç kalitesi kaydı.</p></div><div class="box warn"><h4>FAZ 2 — KRİTİK YÜKLERİ GÖR</h4><p>UPS, vinçler, terminal traktörleri, aydınlatma ve yardımcı tesislerde detaylı ölçüm.</p></div><div class="box green"><h4>FAZ 3 — ANALİZ ET VE ÖNLEM AL</h4><p>Anomali tespiti, bakım önceliklendirme, olay korelasyonu ve süreklilik KPI'ları.</p></div><div class="box"><h4>FAZ 4 — OPTİMİZE ET</h4><p>Veriye dayalı yatırım planı, aktif enerji yönetimi ve sürekli iyileştirme.</p></div></section>
+<!-- 12 --> <section class="slide"><h2>🌍 GELECEKTE ÖLÇEKLENEBİLİR ALTYAPI</h2><p>İlk yatırım, yalnızca kuru yük tesisinin izlenmesi değil; limanın tamamı için ortak bir enerji görünürlüğü ve kayıt altyapısının kurulmasıdır.</p><div class="grid3"><div class="card"><h4>Bugün</h4><p>Kuru yük tesisi, OG/AG dağıtım, güç kalitesi ve kritik ekipmanlar.</p></div><div class="card"><h4>Sonraki adım</h4><p>Diğer tesisler, UPS ağı, jeneratörler, vinçler ve terminal traktörleri.</p></div><div class="card"><h4>Hedef</h4><p>SAFİ Derince'nin enerji altyapısının tek merkezi platformdan yönetilmesi.</p></div></div><div class="box green"><p><strong>Yatırım mantığı:</strong> Bugünün gerçek ihtiyacını çözerken yarının genişlemesine hazır bir temel kurmak.</p></div></section>
+<!-- 13 --> <section class="slide"><h2>📅 UYGULAMA PLANI VE SONRAKİ ADIMLAR</h2><div class="grid2"><div class="box lightblue"><h4>İlk 2 hafta</h4><p>Altyapı ve kritik yüklerin incelenmesi; ölçüm, güç kalitesi ve haberleşme noktalarının belirlenmesi.</p></div><div class="box"><h4>Hafta 3–4</h4><p>Sistem tasarımı, alarm senaryoları, donanım listesi ve kurulum planı.</p></div><div class="box green"><h4>Ay 2–3</h4><p>Kurulum, güç kalitesi kaydedicilerin devreye alınması, test ve kalibrasyon.</p></div><div class="box warn"><h4>Ay 4</h4><p>Canlıya geçiş, eğitim, izleme ve ölçülebilir iyileştirme planı.</p></div></div><div class="hero"><p>🎯 <strong>İlk hedef: Güvenli enerji altyapısı ve durmayan terminal operasyonu.</strong></p></div></section>
+<!-- 14 --> <section class="slide"><h2>🏆 SONUÇ: PATRON İÇİN, TEKNİK EKİP İÇİN</h2><div class="grid2"><div class="box green"><h4>Yönetim için</h4><p>Elektrik kaynaklı duruş riskini azaltmaya yönelik görünür, ölçülebilir ve ölçeklenebilir yatırım.</p></div><div class="box lightblue"><h4>Teknik ekip için</h4><p>Daha az manuel takip, daha hızlı arıza teşhisi, daha iyi kayıt ve önceliklendirilmiş bakım.</p></div></div><div class="hero"><p class="quote">“Bu sistemin değeri, daha fazla ekran üretmesi değil; elektriksel riskleri görünür kılarak limanın güvenli ve kesintisiz çalışmasına katkı sağlamasıdır.”</p></div><p style="text-align:center;font-size:1.25em;color:#0068cf;font-weight:700">Sorularınız için teşekkürler.</p></section>
+</div><div class="nav"><button id="prev" onclick="move(-1)">← Önceki</button><span class="counter"><b id="current">1</b> / <span id="total">14</span></span><button id="next" onclick="move(1)">Sonraki →</button></div></div><div class="hint">⌨️ Ok tuşları veya Space ile gezinin</div>
+<script>let current=1,total=14;function show(n){current=Math.max(1,Math.min(n,total));document.querySelectorAll('.slide').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.slide')[current-1].classList.add('active');document.getElementById('current').textContent=current;document.getElementById('prev').disabled=current===1;document.getElementById('next').disabled=current===total}function move(n){show(current+n)}document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();move(1)}else if(e.key==='ArrowLeft'){e.preventDefault();move(-1)}});show(1);</script>
+</body></html>
